@@ -65,6 +65,12 @@ The project database includes the following 10 tables, which are interrelated th
 **Example Relationships:**
 - `company` → `address` → `city` → `country`
 - `employee` → `address` → `city` → `country`
+- **Job Relationships:**
+  - `job` → `job_category`
+  - `job` → `job_contract`
+  - `job` → `job_salary`
+  - `job` → `company`
+  - `job`→ `address` → `city` → `country`
 
 ---
 
