@@ -1,48 +1,71 @@
-# Hired_job_portal
+# HIRED & HIRE Job Portal
 
-This is a job portal named "HIRED & HIRE".
-This is a dynamic web project which is a JOB PORTAL named "HIRED & HIRE" where the data shown is displayed and inserted from the "a_hired.sql" database.
+HIRED & HIRE is a dynamic web project that serves as a job portal. This application manages and displays data using the `a_hired.sql` database.
 
-JOB PORTAL FEATURES:
-You can sign up as a company or employee and then sign in .
-As an employee you can:
-    1. Search for jobs posted by company and "SAVE" them to view later or "APPLY" for that job.
-    2. Update your account information once signed in.
-    3. You can delete your account.
-    
-As a company you can :
-    1. "POST A JOB" and you can view all your posted jobs in the homepage. 
-    2. View the applicants data that have applied to your company.
-    3. Update your account information once signed in.
-    4. You can delete your account.
+## Job Portal Features
 
+### For Employees:
+- **Sign Up & Sign In**: Register as an employee to access the portal.
+- **Search for Jobs**: Find jobs posted by companies, and either **SAVE** them for later or **APPLY** directly.
+- **Update Account Information**: Modify your profile details once signed in.
+- **Delete Account**: Remove your account from the platform.
 
+### For Companies:
+- **Post a Job**: List job vacancies and view them on the homepage.
+- **View Applicants**: Access information on candidates who have applied to your postings.
+- **Update Account Information**: Edit your company profile after signing in.
+- **Delete Account**: Delete your company account from the portal.
 
-JOB PORTAL DATA LOGIC:
+## Job Portal Data Logic
 
-Employee/Client means --> An individual person looking for a job.
-Company means --> An organization looking to give a job to people.
+- **Employee/Client**: An individual seeking employment.
+- **Company**: An organization offering job opportunities.
 
-Inside com.jobmarket there are two interfaces:
-    1. File_name : It contains all the name of the files as a CONSTANT.
-    2. DB_config : It contains all the Database Information and its properties like Table name, Stored Procedure, Column name, Callable Statement as a CONSTANT.
+### Package Structure
 
-This project contains 3 aspects: 
-    com.jobmarket.client(.controller/.model) --> this refers to all the action done in the client part of this project.
-    com.jobmarket.company(.controller/.model) --> this refers to all the action done in the company part of this project.
-    com.jobmarket.hired(.controller/.model) --> this contains the default value provided by the JobPortal HIRED & HIRE like "job_categories", "contract_type", "salary_amount", "country_list".
-    
-  In these aspects:
-          "Controller" contains all the sevlets.
-          "Model" contains all the respective Classes. " DB_helper_(employee/company/hired).java "  contains all the executing method like 'signing up' , 'log in verification', 'displaying jobs' etc.
+The project includes three primary components within the `com.jobmarket` package:
 
-   
+1. **Interfaces:**
+   - `File_name`: Contains file names as constants.
+   - `DB_config`: Includes database information and properties such as table names, stored procedures, column names, and callable statements as constants.
 
-There are 10 tables in the database:
-"employee", "company", "job", "address", "city", "country", "job_category", "job_contract", "job_salary", "employee_saved_job".
+2. **Modules:**
+   - **`com.jobmarket.client`**:
+     - **Controller**: Manages actions and requests related to employees.
+     - **Model**: Contains classes relevant to employee operations.
+   - **`com.jobmarket.company`**:
+     - **Controller**: Manages actions and requests related to companies.
+     - **Model**: Contains classes relevant to company operations.
+   - **`com.jobmarket.hired`**:
+     - **Controller**: Provides default settings for job categories, contract types, salary amounts, and country lists.
+     - **Model**: Contains classes for default values provided by HIRED & HIRE.
 
-All these tables have their respective relationship with another using Foreign-Key. 
-    For example:
-          company --> address --> city --> country
-          employee --> address --> city --> country
+### Important Classes
+- `DB_helper_employee.java`
+- `DB_helper_company.java`
+- `DB_helper_hired.java`
 
+These classes contain methods for key operations such as signing up, login verification, and job display.
+
+## Database Structure
+
+The project database includes the following 10 tables, which are interrelated through foreign keys:
+
+- `employee`
+- `company`
+- `job`
+- `address`
+- `city`
+- `country`
+- `job_category`
+- `job_contract`
+- `job_salary`
+- `employee_saved_job`
+
+**Example Relationships:**
+- `company` → `address` → `city` → `country`
+- `employee` → `address` → `city` → `country`
+
+---
+
+This README provides an overview of the HIRED & HIRE job portal project, including its features, architecture, and database structure.
