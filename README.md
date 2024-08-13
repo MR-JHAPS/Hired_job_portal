@@ -27,7 +27,7 @@ The project includes three primary components within the `com.jobmarket` package
 
 1. **Interfaces:**
    - `File_name`: Contains file names as constants.
-   - `DB_config`: Includes database information and properties such as table names, stored procedures, column names, and callable statements as constants.
+   - `DB_config`: Includes database information and properties such as database source, table names, stored procedures, column names, and callable statements as constants.
 
 2. **Modules:**
    - **`com.jobmarket.client`**:
