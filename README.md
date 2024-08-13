@@ -49,7 +49,7 @@ These classes contain methods for key operations such as signing up, login verif
 
 ## Database Structure
 
-The project database includes the following 10 tables, which are interrelated through foreign keys:
+The project database includes the following 10 tables, which are interrelated through foreign keys and multiples views and Store Procedure:
 
 - `employee`
 - `company`
