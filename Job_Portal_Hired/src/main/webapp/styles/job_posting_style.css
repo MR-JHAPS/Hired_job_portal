@@ -1,0 +1,185 @@
+@charset "ISO-8859-1";
+
+
+
+main{
+	background-color: var(--contrast_light);
+	padding:10px;
+	
+}
+
+
+.form_section{
+	background-color: var(--main_light);
+	width:400px;
+	margin:auto;
+	box-sizing: border-box;
+	box-shadow:0 4px 12px rgba(0,0,0,0.15);
+	padding:20px;
+}
+
+form{
+	
+	box-sizing: border-box;
+/* 	text-align: center; */
+	overflow: hidden;
+}
+
+form label{
+	display:inline-block;
+	padding:5px;
+	margin-top:10px;
+	letter-spacing: 1px;
+/* 	background-color: green; */
+}
+
+/*----------------------------STYLES FOR INPUT TYPE OF FORMS----------------------------------------------------------------------------------  */
+
+
+form input[type=text]{
+	width:250px;
+	height:20px;
+	padding:4px;
+}
+
+form select{
+	width:250px;
+	height:25px;
+	padding:3px;
+}
+
+form input[type=number]{
+	width:150px;
+	height:25px;
+	padding:3px;
+}
+
+form input[type=number]{
+	width:150px;
+	height:25px;
+	padding:3px;
+}
+
+
+
+form textarea{
+	resize: none;
+	width: 250px;
+	height:60px;
+}
+
+form input[type=submit]{
+	width : 100px;
+	height:40px;
+	background-color: var(--main_color);
+	color: var(--contrast_light);
+	border-radius: 10px;
+	cursor: pointer;
+	margin-left:20px;
+}
+
+		form input[type=submit]:hover{
+			background-color: var(--contrast_dark);	
+			}
+
+form input[type=reset]{
+	width : 100px;
+	height:40px;
+	background-color: var(--warning_light);
+	color: var(--contrast_light);
+	border-radius: 10px;
+	cursor: pointer;
+	margin-left:20px;
+}
+			form input[type=reset]:hover{
+			background-color: var(--warning_dark);	
+			}
+
+
+
+.job_skills{
+	box-sizing:border-box;
+	background-color: green;
+	padding:1px 5px 10px 5px;
+	
+}
+
+.job_skills label{
+	background-color:pink;
+	display:inline-block;
+	padding:2px;
+	margin-top:10px;
+	letter-spacing: 1px;
+/* 	display:flex; */
+/* 	flex-direction: row; */
+/* 	justify-content: center; */
+/* 	align-items: center; */
+}
+
+.job_skills .check{
+	background-color:pink;
+	display:inline-block;
+	padding:2px;
+	margin-top:2px;
+	margin-bottom:4px;
+	letter-spacing: 1px;
+}
+
+.job_skills input[type=checkbox]{
+	width:20px;
+	height:20px;
+	padding:2px;
+	margin-top:2px;
+	margin-bottom:4px;
+}
+
+
+
+
+
+
+/*----------------------------THIS IS THE DROPDOWN OF SELECT OPTION OF FORM------------------------------------------------------------------  */
+
+
+/* Dropdown container */
+.drop_down {
+    position: relative;
+    display: inline-block;
+}
+
+/* Dropdown button */
+.dropdown-button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+/* Dropdown content (hidden by default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Style for each checkbox item */
+.dropdown-content label {
+    display: block;
+    padding: 8px 12px;
+    cursor: pointer;
+}
+
+/* Change background color on hover */
+.dropdown-content label:hover {
+    background-color: #f1f1f1;
+}
