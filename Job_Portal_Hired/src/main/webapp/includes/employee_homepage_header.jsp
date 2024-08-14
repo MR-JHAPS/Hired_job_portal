@@ -74,9 +74,9 @@
 				<li><a href="Employee_homepage">Home</a></li>
 				<li><a href="Display_saved_job">Saved Job</a></li>
 				
-				<li><a href="#">Messages</a></li>
+<!-- 				<li><a href="#">Messages</a></li> -->
 				<li class="float_right"><a href="Employee_account_settings">My Account</a></li>		
-				<li class="float_right"><a href="Employee_log_out">Log out -- <%=session_employee_email %></a></li>
+				<li class="float_right"><a href="Employee_log_out">Log out :  <%=session_employee_email %></a></li>
 			
 		</ul>
 	</nav>

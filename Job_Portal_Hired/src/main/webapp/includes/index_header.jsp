@@ -22,8 +22,8 @@
 	<nav>
 		<ul>
 			<li><a href="index.jsp"> Home </a></li>
-			<li><a href="#"> Search companies </a></li>
-			<li><a href="projects.jsp"> Search Jobs </a></li>
+<!-- 			<li><a href="#"> Search companies </a></li> -->
+			<li><a href="#"> Search Jobs </a></li>
 			<li><a href="#"> About us </a></li>
 		</ul>
 	</nav>
