@@ -8,10 +8,10 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.jobmarket.Config_hired;
+import com.jobmarket.DB_config;
 
 //In this class only the "Connection and Disconnection" to the respective database is done.
-public class DB_connection implements Config_hired{
+public class DB_connection implements DB_config{
 
 	public Connection connect_db() {
 				Connection db_connection = null;

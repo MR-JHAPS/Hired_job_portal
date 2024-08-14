@@ -10,7 +10,7 @@ import java.sql.Types;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.jobmarket.Config_hired;
+import com.jobmarket.DB_config;
 import com.jobmarket.company.model.Company;
 import com.jobmarket.company.model.Job;
 import com.jobmarket.company.model.Job_wrapper;
@@ -21,7 +21,7 @@ import com.jobmarket.hired.model.Job_category;
 import com.jobmarket.hired.model.Job_contract;
 import com.jobmarket.hired.model.Job_salary;
 
-public class DB_helper_employee implements Config_hired{
+public class DB_helper_employee implements DB_config{
 //Connecting to DB---------------------------------------------------------------------------------------------------------------------------------
 
 	public Connection connect_db() {
@@ -47,10 +47,6 @@ public class DB_helper_employee implements Config_hired{
 				System.out.println("Error while disconnecting the database : " + e);
 			}
 	}//ends disconnection method.
-
-	public boolean insert_employee_c(Connection db_connection, Country country) {
-		return false;
-	}
 
 	
 

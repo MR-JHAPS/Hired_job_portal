@@ -1,5 +1,0 @@
- remove repeat password from database.
- repeat password is only needed for the validation of the data from the form is servlet after validation is done it is not longer needed.
- 
- create a password validation 1 uppercase, 1 special character, 1 number minimum 8 characters.
- create a email validation.

@@ -7,9 +7,9 @@ import java.util.List;
 import java.sql.DriverManager;
 
 
-import com.jobmarket.Config_hired;
+import com.jobmarket.DB_config;
 
-public class DB_helper_job implements Config_hired {
+public class DB_helper_job implements DB_config {
 
 	public Connection connect_db() {
 		Connection db_connection = null;

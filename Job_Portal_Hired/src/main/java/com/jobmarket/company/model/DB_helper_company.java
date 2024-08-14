@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.concurrent.Callable;
 
 import com.jobmarket.Config_company_db;
-import com.jobmarket.Config_hired;
+import com.jobmarket.DB_config;
 import com.jobmarket.hired.model.Address;
 import com.jobmarket.hired.model.City;
 import com.jobmarket.hired.model.Country;
@@ -21,7 +21,7 @@ import com.jobmarket.hired.model.Job_contract;
 import com.jobmarket.hired.model.Job_salary;
 import com.mysql.cj.xdevapi.Result;
 
-public class DB_helper_company implements Config_hired {
+public class DB_helper_company implements DB_config {
 
 	public Connection connect_db() {
 		Connection db_connection = null;

@@ -1,6 +1,6 @@
 package com.jobmarket;
 
-public interface Config_hired {
+public interface DB_config {
 	//DATABASE CONFIGURATION:
 	String DB_DRIVER = "com.mysql.jdbc.Driver";
 	String DB_NAME = "a_hired" ;
