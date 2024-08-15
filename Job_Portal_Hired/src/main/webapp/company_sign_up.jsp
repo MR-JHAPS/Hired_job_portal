@@ -33,7 +33,7 @@
 
 	<main>
 			<section class="form_outer_area">
-				<form class="form_area" method="GET" action="Sign_up_company_insert">
+				<form class="form_area" method="POST" action="Sign_up_company_insert">
 					
 						<article class="form_left">
 								<label for="company_name">Company Name </label>

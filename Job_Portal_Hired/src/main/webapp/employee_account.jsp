@@ -20,7 +20,7 @@
 		</section>
 		
 		
-		<form action="Employee_update_account" method="GET">
+		<form action="Employee_update_account" method="POST">
 				<label class="form_header">Your Account Details</label><br>
 				
 				<label for="e_name">First name</label><br>

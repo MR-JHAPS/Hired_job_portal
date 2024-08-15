@@ -25,7 +25,7 @@
 		
 	
 			<section class="search_bar">
-					<form method="GET" action="Employee_job_search">
+					<form method="POST" action="Employee_job_search">
 					<label for="employee_job_search">Search Jobs</label><br>
 						<input type="text" name="employee_job_search" id="employee_job_search" placeholder="Job, company name">
 						

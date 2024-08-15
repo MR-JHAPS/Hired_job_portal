@@ -184,4 +184,14 @@
     <servlet-name>Display_saved_job</servlet-name>
     <url-pattern>/Display_saved_job</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>Employee_apply_job_servlet</display-name>
+    <servlet-name>Employee_apply_job_servlet</servlet-name>
+    <servlet-class>com.jobmarket.client.controller.Employee_apply_job_servlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Employee_apply_job_servlet</servlet-name>
+    <url-pattern>/Employee_apply_job_servlet</url-pattern>
+  </servlet-mapping>
 </web-app>

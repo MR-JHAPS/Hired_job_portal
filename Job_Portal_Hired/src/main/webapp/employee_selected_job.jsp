@@ -43,8 +43,8 @@
 							</div>
 							
 							<div class="buttons">	
-								<div class="save"><a href="#"><img src="images/save_icon_blue.png" width=16px> Save</a></div>
-								<a href="#"><button class="apply">Apply</button></a>
+								<div class="save"><a href="Employee_save_job_servlet?job_id=<%=element.getJob().getJob_id()%>"><img src="images/save_icon_blue.png" width=16px> Save</a></div>
+								<a href="Employee_apply_job_servlet?job_id=<%=element.getJob().getJob_id()%>"><button class="apply">Apply</button></a>
 							</div>	
 				</article>	
 					
@@ -56,9 +56,9 @@
 					
 				<article class="job_body">	
 						<!-- THIS IS FOR THE LOCATION TO GOOGLE MAPS -->
-							<h5><img src="images/location_icon.png" width=16px> <%=element.getAddress().getAddress_name() + element.getCity().getCity_name()%>, 
+							<h5><img src="images/location_icon.png" width=16px> <%=element.getAddress().getAddress_name() + element.getCity().getCity_name()%> 
 							<a href="https://www.google.com/maps/place/<%=element.getAddress() + element.getCity().getCity_name()%>" >
-								<%=element.getAddress() + element.getCity().getCity_name()%>
+								<%=element.getAddress().getAddress_name() + element.getCity().getCity_name()%>
 							</a>
 								
 							</h5>
