@@ -10,7 +10,7 @@
 </head>
 <body>
 		
-		<%@ include file="includes/company_homepage_header.jsp"%>
+		<%@ include file="includes/employee_homepage_header.jsp"%>
 		
 		
 		
@@ -22,13 +22,13 @@
 		
 			<section class="form_area">
 					
-				<form action="" method="GET"  enctype="multipart/form-data">
+				<form action="Employee_apply_job_servlet" method="GET"  enctype="multipart/form-data">
 					
-					<label>Select Your CV</label>		<br>
-					<input type = "file" name="file"><br>
+					<label for="cv_file" >Select Your CV</label>		<br>
+					<input type = "file" name="cv_file" id="cv_file" accept="application/pdf" ><br>
 					
-					<label class="text_area_label" for="">Cover Letter Text</label><br>
-					<textarea  >Write Your Cover Letter Here</textarea><br>
+					<label class="text_area_label" for="cover_letter" >Cover Letter Text</label><br>
+					<textarea id="cover_letter" name="cover_letter" placeholder="Write Your Cover Letter Here"></textarea><br>
 					
 					<input type="submit" value="APPLY FOR THIS JOB">
 				

@@ -26,6 +26,9 @@ public interface File_name {
 	
 	
 	
+	//CV FILE DIRECTORY:
+	
+	String CV_SAVED_DIRECTORY = "pdf";
 	
 	
 	

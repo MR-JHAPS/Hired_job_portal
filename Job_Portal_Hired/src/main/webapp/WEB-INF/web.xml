@@ -194,4 +194,14 @@
     <servlet-name>Employee_apply_job_servlet</servlet-name>
     <url-pattern>/Employee_apply_job_servlet</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>Upload_cv</display-name>
+    <servlet-name>Upload_cv</servlet-name>
+    <servlet-class>com.jobmarket.client.controller.Upload_cv</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Upload_cv</servlet-name>
+    <url-pattern>/Upload_cv</url-pattern>
+  </servlet-mapping>
 </web-app>

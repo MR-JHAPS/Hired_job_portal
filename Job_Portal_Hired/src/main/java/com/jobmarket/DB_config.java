@@ -124,11 +124,13 @@ public interface DB_config {
 
 	
 	
+	//Stored Procedure of EMPLOYEE_CV:
+	String SP_INSERT_EMPLOYEE_CV = "call sp_insert_employee_cv_name(?,?)";
 	
-	//PARAMETERS OF STORED PROCEDURE:
 	
-	String SP_CITY_NAME_PARAMETER = "sp_city_name";
-	String SP_FK_COUNTRY_PARAMETER = "sp_FK_country";
+	
+	
+	
 	
 	
 	

@@ -44,7 +44,7 @@
 							
 							<div class="buttons">	
 								<div class="save"><a href="Employee_save_job_servlet?job_id=<%=element.getJob().getJob_id()%>"><img src="images/save_icon_blue.png" width=16px> Save</a></div>
-								<a href="Employee_apply_job_servlet?job_id=<%=element.getJob().getJob_id()%>"><button class="apply">Apply</button></a>
+								<a href="employee_apply_job_page.jsp"><button class="apply">Apply</button></a>
 							</div>	
 				</article>	
 					

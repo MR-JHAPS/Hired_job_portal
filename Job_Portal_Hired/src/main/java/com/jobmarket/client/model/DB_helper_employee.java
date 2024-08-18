@@ -420,6 +420,38 @@ public class DB_helper_employee implements DB_config{
 		
 		return new ArrayList<Job_wrapper>();
 	}
+
+	
+	
+	
+	
+	public boolean insert_cv_name(Connection db_connection, String file_name, int user_id) {
+
+		try {
+			String sql_query = SP_INSERT_EMPLOYEE_CV;
+			CallableStatement prepare = db_connection.prepareCall(sql_query);
+			prepare.setInt("sp_employee_id", user_id);
+			prepare.setString("sp_cv_name", file_name);
+			prepare.execute();
+			
+			System.out.println("CV name inserted successfully in the Database");
+			return true;
+			
+		}catch(SQLException e) {
+			System.err.println("SQL error inserting the CV name:");
+	        System.err.println("Message: " + e.getMessage());
+	        System.err.println("SQL State: " + e.getSQLState());
+	        System.err.println("Error Code: " + e.getErrorCode());
+	        e.printStackTrace(); // Or use a logging framework like Log4j
+			
+		}catch(Exception e) {
+			for(StackTraceElement element : e.getStackTrace()) {
+				System.out.println("Other error inserting the CV name : " + element);
+			}//end for
+		}
+		
+		return false;
+	}//ends method.
 	
 	
 	
