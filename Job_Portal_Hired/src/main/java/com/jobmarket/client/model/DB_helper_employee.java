@@ -357,6 +357,7 @@ public class DB_helper_employee implements DB_config{
 		return false;
 	}
 
+//GETTING SAVED JOB INFORMATION:	
 	public List<Job_wrapper> get_saved_job_information(Connection db_connection, int employee_id) {
 		List<Job_wrapper> job_list = new ArrayList<Job_wrapper>();
 		try {
@@ -424,7 +425,7 @@ public class DB_helper_employee implements DB_config{
 	
 	
 	
-	
+//INSERTING THE CV NAME IN THE DATABASE:	
 	public boolean insert_cv_name(Connection db_connection, String file_name, int user_id) {
 
 		try {
@@ -452,6 +453,67 @@ public class DB_helper_employee implements DB_config{
 		
 		return false;
 	}//ends method.
+
+	
+	
+//GETTING CV LIST BY EMPLOYEE ID:	
+	public List<Cv_file> get_cv_list_by_id(Connection db_connection, int employee_id) {
+		List<Cv_file> cv_list = new ArrayList<Cv_file>();
+		try {
+			String sql_query = SP_DISPLAY_CV_BY_EMPLOYEE_ID ;
+			CallableStatement prepare = db_connection.prepareCall(sql_query);
+			prepare.setInt(1, employee_id);
+			prepare.execute();
+			
+			ResultSet rs = prepare.getResultSet();
+			while(rs.next()) {
+				Cv_file cv_file_row = new Cv_file();
+				cv_file_row.setCv_id(rs.getInt("cv_id"));
+				cv_file_row.setCv_name(rs.getString("cv_name"));
+				cv_file_row.setFk_employee(rs.getInt("FK_employee"));
+				cv_list.add(cv_file_row);
+			}
+			System.out.println("Cv by Employee ID displayed successfully");
+			return cv_list;
+			
+		}catch (SQLException e) {
+			for(StackTraceElement element : e.getStackTrace()) {
+				System.out.println("OTHER ERROR WHILE GETTING CV LIST BY ID: " + element);
+			}
+		}catch (Exception e) {
+			for(StackTraceElement element : e.getStackTrace()) {
+				System.out.println("OTHER ERROR WHILE GETTING CV LIST BY ID: " + element);
+			}
+		}
+		
+		return  new ArrayList<Cv_file>();
+	}
+
+
+	
+//INSERTING THE APPLIED JOB OF EMPLOYEE:	
+	public boolean insert_applied_job(Connection db_connection, int cv_id, String employee_cover_letter, int employee_id, int job_id) {
+
+		try {
+			String sql_query = SP_INSERT_APPLIED_JOB;
+			CallableStatement prepare = db_connection.prepareCall(sql_query);
+			prepare.setString("sp_cover_letter", employee_cover_letter);
+			prepare.setInt("sp_cv_id", cv_id);
+			prepare.setInt("sp_employee_id", employee_id);
+			prepare.setInt("sp_job_id", job_id);
+			prepare.execute();
+			System.out.println("Applied Job inserted Successfully.");
+			return true;
+			
+		}catch(SQLException e) {
+			e.printStackTrace();
+			System.out.println(e);
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		
+		return false;
+	}
 	
 	
 	

@@ -204,4 +204,14 @@
     <servlet-name>Upload_cv</servlet-name>
     <url-pattern>/Upload_cv</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>Resources_for_employee_apply_job_jsp</display-name>
+    <servlet-name>Resources_for_employee_apply_job_jsp</servlet-name>
+    <servlet-class>com.jobmarket.client.controller.Resources_for_employee_apply_job_jsp</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Resources_for_employee_apply_job_jsp</servlet-name>
+    <url-pattern>/Resources_for_employee_apply_job_jsp</url-pattern>
+  </servlet-mapping>
 </web-app>

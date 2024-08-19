@@ -8,6 +8,11 @@
       	if(	request.getAttribute("attr_job_list_by_job_id")!=null){
       		job_list_by_job_id= (List<Job_wrapper>) request.getAttribute("attr_job_list_by_job_id");
       	}
+      	
+      	
+      	
+      	
+      	
   %>
     	<%
     	for(Job_wrapper element : job_list_by_job_id){
@@ -43,8 +48,10 @@
 							</div>
 							
 							<div class="buttons">	
+								
 								<div class="save"><a href="Employee_save_job_servlet?job_id=<%=element.getJob().getJob_id()%>"><img src="images/save_icon_blue.png" width=16px> Save</a></div>
-								<a href="employee_apply_job_page.jsp"><button class="apply">Apply</button></a>
+								
+								<a href="Resources_for_employee_apply_job_jsp?job_id=<%=element.getJob().getJob_id()%>"><button class="apply">Apply</button></a>
 							</div>	
 				</article>	
 					

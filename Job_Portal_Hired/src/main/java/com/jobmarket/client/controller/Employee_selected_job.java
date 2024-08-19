@@ -26,7 +26,7 @@ public class Employee_selected_job extends HttpServlet implements File_name {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 	
-		int job_id = Integer.parseInt(request.getParameter("id"));
+		int job_id = Integer.parseInt(request.getParameter("job_id"));
 		
 		
 		DB_helper_employee db = new DB_helper_employee();
@@ -38,6 +38,7 @@ public class Employee_selected_job extends HttpServlet implements File_name {
 		
 		//setting attributes and sending to COMPANY_HOME_JSP:
 		request.setAttribute("attr_job_list_by_job_id", job_list_by_job_id);
+		
 				
 		//Dispatcher:
 		request.getRequestDispatcher(EMPLOYEE_SELECTED_JOB_JSP).forward(request, response);

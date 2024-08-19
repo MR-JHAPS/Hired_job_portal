@@ -9,6 +9,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 import jakarta.servlet.http.Part;
+import jakarta.websocket.Session;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -36,9 +37,12 @@ public class Upload_cv extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-    	boolean is_cv_uploaded = false;
+    	HttpSession session= request.getSession(false);
+    	boolean is_cv_file_uploaded = false;
+    	boolean is_cv_file_inserted_db = false;
     	DB_helper_employee db = new DB_helper_employee();
     	Connection db_connection = null;
+    	String file_name ="";
     	
         try {
             // Get the context and file directory
@@ -60,7 +64,7 @@ public class Upload_cv extends HttpServlet {
                 }
             }
 
-            HttpSession session = request.getSession(false);	
+             session = request.getSession(false);	
             
             int user_id = (Integer) session.getAttribute("attr_employee_id");
             String user_name = (String) session.getAttribute("attr_employee_first_name"); 
@@ -70,7 +74,7 @@ public class Upload_cv extends HttpServlet {
            // String fileName = filePart.getSubmittedFileName();
 
             //setting specific filename as per user.
-            String file_name = user_name + "_" + user_id  + ".pdf";
+             file_name = user_name + "_" + user_id  + ".pdf";
             
             
             // Define the full file path
@@ -86,17 +90,18 @@ public class Upload_cv extends HttpServlet {
                     saveFile.write(buffer, 0, bytesRead);
                 }
                 System.out.println("CV file uploaded to server/folder.");
-                
+               // to know if the file upload was success and only then insert to db.
+                is_cv_file_uploaded = true;
             }
                 //inserting the file name in the sql table to relate it with respective user/employee:
                 
-                
+                if(is_cv_file_uploaded==true) {
                 db_connection = db.connect_db();
-                is_cv_uploaded = db.insert_cv_name(db_connection, file_name, user_id);
+                is_cv_file_inserted_db = db.insert_cv_name(db_connection, file_name, user_id);
                 
-                System.out.println("CV name insert in table Status : " + is_cv_uploaded);
+                System.out.println("CV name insert in table Status : " + is_cv_file_inserted_db +"cv file upload to server status : " + is_cv_file_uploaded );
                 
-                
+                }
                 System.out.println("File name: " + file_name + " Location: " + fileToSave.getAbsolutePath());
             
 
@@ -110,11 +115,12 @@ public class Upload_cv extends HttpServlet {
         } finally {
             // Forward the request to the JSP page
         	
-        	System.out.println("CV upload status : " + is_cv_uploaded);
+        	System.out.println("CV upload status : " + is_cv_file_inserted_db);
         	
-        	if(is_cv_uploaded == true) {
+        	if(is_cv_file_inserted_db == true) {
         		String upload_status = "CV uploaded successfully";
         		request.setAttribute("attr_upload_status", upload_status);
+        		session.setAttribute("attr_file_name", file_name);
         		 request.getRequestDispatcher("employee_account.jsp").forward(request, response);
         	}
         	else {
