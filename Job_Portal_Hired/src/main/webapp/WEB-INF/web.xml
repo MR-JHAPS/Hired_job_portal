@@ -184,4 +184,44 @@
     <servlet-name>Display_saved_job</servlet-name>
     <url-pattern>/Display_saved_job</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>Employee_apply_job_servlet</display-name>
+    <servlet-name>Employee_apply_job_servlet</servlet-name>
+    <servlet-class>com.jobmarket.client.controller.Employee_apply_job_servlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Employee_apply_job_servlet</servlet-name>
+    <url-pattern>/Employee_apply_job_servlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>Upload_cv</display-name>
+    <servlet-name>Upload_cv</servlet-name>
+    <servlet-class>com.jobmarket.client.controller.Upload_cv</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Upload_cv</servlet-name>
+    <url-pattern>/Upload_cv</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>Resources_for_employee_apply_job_jsp</display-name>
+    <servlet-name>Resources_for_employee_apply_job_jsp</servlet-name>
+    <servlet-class>com.jobmarket.client.controller.Resources_for_employee_apply_job_jsp</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Resources_for_employee_apply_job_jsp</servlet-name>
+    <url-pattern>/Resources_for_employee_apply_job_jsp</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>Display_job_applicant</display-name>
+    <servlet-name>Display_job_applicant</servlet-name>
+    <servlet-class>com.jobmarket.company.controller.Display_job_applicant</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Display_job_applicant</servlet-name>
+    <url-pattern>/Display_job_applicant</url-pattern>
+  </servlet-mapping>
 </web-app>

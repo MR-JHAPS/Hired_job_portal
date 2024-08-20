@@ -105,8 +105,8 @@ nav>ul>li>a{
 
 
 nav a:hover{
-	background-color: var(--contrast_color);
-	color:var(--contrast_dark);
+	background-color: var(--contrast_dark);
+	color:var(--contrast_light);
 	transition-duration:0.3s;
 	height: 100%;
 /* 	padding: 10px 50px ; */
@@ -119,12 +119,14 @@ nav a:hover{
 
 
 footer{
+	height:170px;
 	display:flex;
 	flex-direction: row;
 	justify-content: flex-start;
 	align-items: flex-start;
 	
 	background-color: var(--contrast_dark);
+	padding-top:20px;
 	
 /* 	margin-top:10px; */
 	
@@ -136,15 +138,20 @@ footer li{
 
 footer li a{
 	text-decoration: none;
-	color: var(--contrast_light);
+	color: var(--main_light);
 	display:inline-block;
-	width:200px;
+	width:180px;
 	
-	padding:10px;
-	margin:1px;
-	border-radius: 10px;
+	padding:8px;
+	
+	
 	text-align: center;
-	
+	font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-size:14px;
+    font-weight: 300;
+    font-style: normal;
+    letter-spacing: 0.5px;
 }
 
 
@@ -175,8 +182,9 @@ footer li a{
 }
 
 footer a:hover{
-	color: var(--main_color);
-	background-color: var(--main_light);
+	color: var(--contrast_light);
+	text-decoration: underline;
+/* 	background-color: var(--main_light); */
 	transition-duration:0.3s;
 }
 

@@ -42,7 +42,7 @@
 		<section class="form_area">
 				
 				
-				<form  action="Sign_in_company_verification" method="GET">
+				<form  action="Sign_in_company_verification" method="POST">
 				
 					<input type="text" name="email" id="email" placeholder="Email">
 					<br><br>

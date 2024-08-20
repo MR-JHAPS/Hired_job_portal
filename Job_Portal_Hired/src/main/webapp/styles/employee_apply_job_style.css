@@ -1,0 +1,159 @@
+@charset "ISO-8859-1";
+
+body{
+	min-width:540px;
+}
+
+main{
+	padding:10px;
+	
+}
+
+.job_apply_message{
+	background-color: var(--success_background);
+	border: 1px solid green;
+	padding:14px;
+	text-align: center;
+	
+	font-family: "Montserrat", sans-serif;
+	  font-optical-sizing: auto;
+	  font-size:16px;
+	  font-weight: 500;
+	  font-style: normal;
+	  color:var(--contrast_dark);
+	  letter-spacing: 0.2px;
+	
+}
+
+
+
+
+.form_header{
+	box-sizing:border-box;
+	background-color: var(--main_color);
+	width:500px;
+	
+	margin:auto;
+	margin-top:20px;
+	padding-top:12px;
+	padding-bottom:6px;
+	
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	
+	
+	
+	}
+
+
+.form_header h3{
+	  display:inline-block;
+	  margin-left:13px;
+	  
+	  font-family: "Montserrat", sans-serif;
+	  font-optical-sizing: auto;
+	  font-size:18px;
+	  font-weight: 650;
+	  font-style: normal;
+	  color:var(--contrast_light);
+	  
+}
+
+
+/*  THIS IS THE CLASS OF MAIN FORM BOX--------------------------------------------------------------------------------------*/
+.form_area{
+	background-color:blue;
+	box-sizing:border-box;
+	box-shadow:0 7px 12px rgba(0,0,0,0.15);
+	background-color: var(--main_light);
+	width:500px;
+	height: auto;
+	margin:auto;
+	padding:10px 10px;
+	
+	padding-top:20px;
+	
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+	}
+
+
+
+
+.form_area label{
+	display:inline-block;
+	padding: 3px 6px 2px 6px;
+	width : 200px;
+	height:20px;
+	color:var(--blue_dark);
+	margin-bottom:8px;
+	
+	font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-size:16px;
+    font-weight: 510;
+    font-style: normal;
+	
+}
+
+.form_area .text_area_label{
+	
+	margin-top:20px;
+	margin-bottom:8px;
+	padding: 3px 6px 2px 6px;
+	width : 200px;
+	height:20px;
+	
+	
+}
+
+.form_area input[type=file] {
+	
+	
+	display:inline-block;
+	padding: 3px 6px 2px 6px;
+	
+	height:30px;
+	
+	font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-size:15px;
+    font-weight: 500;
+    font-style: normal;
+    
+    color:var(--blue_dark);
+}	
+
+.form_area textarea{
+	
+	resize:none;
+	padding: 3px 6px 2px 6px;
+	width:300px;
+	height:50px;
+}
+
+	
+	
+.form_area input[type=submit] {
+	
+	width:auto;
+	
+	background-color: var(--main_color);
+	color: var(--contrast_light);
+	border-radius: 5px;
+	cursor: pointer;
+	margin-top:20px;
+	padding:10px 18px;
+	
+	font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-size:14px;
+    font-weight: 500;
+    font-style: normal;
+    letter-spacing: 0.2px;
+}
+
+.form_area input[type=submit]:hover{
+	background-color: var(--contrast_dark);
+	transition-duration:0.4s;
+}	

@@ -25,7 +25,7 @@
 		
 	
 			<section class="search_bar">
-					<form method="GET" action="Employee_job_search">
+					<form method="POST" action="Employee_job_search">
 					<label for="employee_job_search">Search Jobs</label><br>
 						<input type="text" name="employee_job_search" id="employee_job_search" placeholder="Job, company name">
 						
@@ -46,7 +46,7 @@
 
 		<%for(Job_wrapper element : job_list){ %>
 				<section class="all_jobs">
-					<a href="Employee_selected_job?id=<%=element.getJob().getJob_id()%>" class="job_link">
+					<a href="Employee_selected_job?job_id=<%=element.getJob().getJob_id()%>" class="job_link">
 							<div class="job_datas">	
 									
 										

@@ -29,11 +29,11 @@ public class Employee_save_job_servlet extends HttpServlet implements File_name{
 		if(request.getParameter("job_id")!=null) {
 			job_id= Integer.parseInt(request.getParameter("job_id"));
 		}
-		System.out.println("job_id is okay in save button" + job_id);
+		//System.out.println("job_id is okay in save button" + job_id);
 		
 		HttpSession session = request.getSession(false);
 		int employee_id = (Integer) session.getAttribute("attr_employee_id");
-		System.out.println("employee_id is okay in save button" + employee_id);
+		//System.out.println("employee_id is okay in save button" + employee_id);
 		
 		Connection db_connection = null;
 		DB_helper_employee db = new DB_helper_employee();

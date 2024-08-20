@@ -122,13 +122,17 @@ public interface DB_config {
 	String SP_INSERT_SAVED_JOB = "call sp_insert_saved_job(?,?)";
 	String SP_DISPLAY_SAVED_JOB ="call sp_display_saved_job_by_employee_id(?)";
 
+	//APPLIED JOB Stored Procedure:
+	String SP_INSERT_APPLIED_JOB = "call sp_insert_applied_job(?,?,?,?,?)";
+	
+	// EMPLOYEE_CV Stored Procedure of:
+	String SP_INSERT_EMPLOYEE_CV = "call sp_insert_employee_cv_name(?,?)";
+	String SP_DISPLAY_CV_BY_EMPLOYEE_ID = "call display_cv_by_employee_id(?)";
 	
 	
 	
-	//PARAMETERS OF STORED PROCEDURE:
 	
-	String SP_CITY_NAME_PARAMETER = "sp_city_name";
-	String SP_FK_COUNTRY_PARAMETER = "sp_FK_country";
+	
 	
 	
 	

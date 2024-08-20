@@ -50,7 +50,7 @@
 	<main>
 		<section class="form_section">
 	
-				<form method="GET" action="Job_posting">
+				<form method="POST" action="Job_posting">
 				
 				
 					<article class="company_id">

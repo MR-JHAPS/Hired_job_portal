@@ -14,27 +14,28 @@
 			<div class="footer_left">
 					
 					<ul>
-						<li><a href="#">cookies</a></li>
-						<li><a href="#">cookies</a></li>
-						<li><a href="#">cookies</a></li>
+						<li><a href="#">About Hired</a></li>
+						<li><a href="#">Our Motive</a></li>
+						<li><a href="#">Work with us</a></li>
+						
 					</ul>
 			</div>
 			
 			<div class="footer_center">
 					
 					<ul>
-						<li><a href="#">cookies</a></li>
-						<li><a href="#">cookies</a></li>
-						<li><a href="#">cookies</a></li>
+						
+						<li><a href="#">Legal Conditions</a></li>
+						<li><a href="#">Privacy Policy</a></li>
 					</ul>
 			</div>
 			
 			<div class="footer_right">
 					
 					<ul>
-						<li><a href="#">cookies</a></li>
-						<li><a href="#">cookies</a></li>
-						<li><a href="#">cookies</a></li>
+						<li><a href="#">Use of Services</a></li>
+						<li><a href="#">Manage Cookies</a></li>
+						
 					</ul>
 			</div>
 			
