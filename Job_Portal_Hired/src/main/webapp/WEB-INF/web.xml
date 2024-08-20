@@ -214,4 +214,14 @@
     <servlet-name>Resources_for_employee_apply_job_jsp</servlet-name>
     <url-pattern>/Resources_for_employee_apply_job_jsp</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>Display_job_applicant</display-name>
+    <servlet-name>Display_job_applicant</servlet-name>
+    <servlet-class>com.jobmarket.company.controller.Display_job_applicant</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Display_job_applicant</servlet-name>
+    <url-pattern>/Display_job_applicant</url-pattern>
+  </servlet-mapping>
 </web-app>

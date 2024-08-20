@@ -123,7 +123,7 @@ public interface DB_config {
 	String SP_DISPLAY_SAVED_JOB ="call sp_display_saved_job_by_employee_id(?)";
 
 	//APPLIED JOB Stored Procedure:
-	String SP_INSERT_APPLIED_JOB = "call sp_insert_applied_job(?,?,?,?)";
+	String SP_INSERT_APPLIED_JOB = "call sp_insert_applied_job(?,?,?,?,?)";
 	
 	// EMPLOYEE_CV Stored Procedure of:
 	String SP_INSERT_EMPLOYEE_CV = "call sp_insert_employee_cv_name(?,?)";

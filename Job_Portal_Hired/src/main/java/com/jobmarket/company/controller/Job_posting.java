@@ -81,43 +81,42 @@ public class Job_posting extends HttpServlet implements File_name {
 		
 		
 		
-		
-		
-	//	HttpSession session = request.getSession(false);
-		//we are assuming the country of the Job will be same as the Company
-	//	int country_id =(Integer) session.getAttribute("attr_company_country");
-	
-		
-		
 		Job job_object = new Job(0, job_name, job_descripcion, job_vacancy, company_id, 0, job_contract_id, job_salary_id, job_category_id);
-//		Job_contract contract_object = new Job_contract(job_contract_id, "");
-//		Job_category category_object = new Job_category(job_category_id, "");
-//		Job_salary salary_object = new Job_salary(job_salary_id, "");
 		Address address_object = new Address(0, job_address, 0);
 		City city_object = new City(0, job_city, country_id);
 		Country country_object = new Country(country_id, "");
 		
 		
-				
-		
-		
-		
-		//Connecting db:
+		Connection db_connection = null;
 		DB_helper_company db = new DB_helper_company();
-		Connection db_connection = db.connect_db();
+		boolean is_job_inserted = false;
 		
-		Job_wrapper job_wrapper_object = new Job_wrapper(job_object, null, null, null, 
-				null, address_object, city_object, country_object);
+		try {
+			//Connecting db:
+			db_connection = db.connect_db();
+			
+			Job_wrapper job_wrapper_object = new Job_wrapper(job_object, null, null, null, 
+					null, address_object, city_object, country_object);
+
+			//inserting:
+			is_job_inserted = db.insert_job_information(db_connection, job_wrapper_object);
+			
+			System.out.println("job inserted : " + is_job_inserted);
+		}catch (Exception e) {
+			
+		}finally {
+			//Disconnecting the DB:
+			if(db_connection!=null) {
+				db.disconnect(db_connection);
+			}
+			response.sendRedirect("Display_company_posted_job?job_inserted=" + is_job_inserted);
+		}
+		
+		
+//		request.getRequestDispatcher("Display_company_posted_job").forward(request, response);
 
 		
-		//inserting:
-		boolean is_job_inserted = db.insert_job_information(db_connection, job_wrapper_object);
 		
-		System.out.println("job inserted : " + is_job_inserted);
-		
-		request.getRequestDispatcher("Display_company_posted_job").forward(request, response);
-		//disconnecting
-		db.disconnect(db_connection);
 		
 		
 		

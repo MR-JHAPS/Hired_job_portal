@@ -12,7 +12,7 @@
     pageEncoding="ISO-8859-1"%>
     
 <%
-		String session_name = (String) session.getAttribute("attr_company_name");
+// 		String session_name = (String) session.getAttribute("attr_company_name");
 
 
 //Only shows job information of Company with active session id.	
@@ -37,13 +37,16 @@
 	
 	<main>
 	
-		<h2>COMPANY HOMEPAGE OF : <%=session_name  %></h2>
+
 	
 	
 	<section class="search_bar">
 		<form method="GET" action="Company_job_search">
-		<label for="company_job_search">Search</label>
+		<label for="company_job_search">Search</label><br>
 			<input type="text" name="company_job_search" id="company_job_search" placeholder="Search your offers">
+			
+			<input type="submit" value="Search">
+		
 		</form>
 	
 	</section>
@@ -51,26 +54,11 @@
 
 
 
-<%-- <%for(Job element : job_list_by_company_id){ %> --%>
-<!-- 		<section class="job_posted"> -->
-				
-<%-- 						<h3><%=element.getJob_name() %></h3> --%>
-					
-<%-- 						<%for(Job_contract contract_element : contract_list_by_id){ %> --%>
-<%-- 								<h5> <%= contract_element.getContract_name()%> </h5> --%>
-<%-- 						<%} %>  --%>
-					
-<%-- 					<p><%=element.getJob_descripcion() %></p> --%>
-					
-				
-<!-- 		</section> -->
-
-<%-- <%} %>	 --%>
-
 
 <%for(Job_wrapper element : job_list_by_company_id){ %>
 		<section class="job_posted">
-				
+			<a href="Company_selected_job?job_id=<%=element.getJob().getJob_id()%>" >
+							<div class="job_datas">		
 						<h3><%=element.getJob().getJob_name() %></h3>
 					
 						
@@ -79,7 +67,7 @@
 					
 					<p><%=element.getJob().getJob_descripcion()%></p>
 					
-				
+			</a>	
 		</section>
 
 <%} %>	

@@ -29,15 +29,16 @@ public class Employee_selected_job extends HttpServlet implements File_name {
 		int job_id = Integer.parseInt(request.getParameter("job_id"));
 		
 		
+		
 		DB_helper_employee db = new DB_helper_employee();
 		Connection db_connection = db.connect_db();
 		
-		List<Job_wrapper> job_list_by_job_id =  db.get_job_information_by_id(db_connection , job_id);
+		List<Job_wrapper> employee_selected_job_info =  db.get_job_information_by_id(db_connection , job_id);
 
 		db.disconnect(db_connection);
 		
 		//setting attributes and sending to COMPANY_HOME_JSP:
-		request.setAttribute("attr_job_list_by_job_id", job_list_by_job_id);
+		request.setAttribute("attr_employee_selected_job_info", employee_selected_job_info);
 		
 				
 		//Dispatcher:

@@ -4,9 +4,9 @@
  <%
   //all the information is inside webapp/includes/employee_header.jsp. 
    		//I brought it here
-   		List<Job_wrapper> job_list_by_job_id = new ArrayList<Job_wrapper>();
-      	if(	request.getAttribute("attr_job_list_by_job_id")!=null){
-      		job_list_by_job_id= (List<Job_wrapper>) request.getAttribute("attr_job_list_by_job_id");
+   		List<Job_wrapper> employee_selected_job_info = new ArrayList<Job_wrapper>();
+      	if(	request.getAttribute("attr_employee_selected_job_info")!=null){
+      		employee_selected_job_info= (List<Job_wrapper>) request.getAttribute("attr_employee_selected_job_info");
       	}
       	
       	
@@ -15,7 +15,7 @@
       	
   %>
     	<%
-    	for(Job_wrapper element : job_list_by_job_id){
+    	for(Job_wrapper element : employee_selected_job_info){
     	%>
     	  
 <!DOCTYPE html>
@@ -51,13 +51,13 @@
 								
 								<div class="save"><a href="Employee_save_job_servlet?job_id=<%=element.getJob().getJob_id()%>"><img src="images/save_icon_blue.png" width=16px> Save</a></div>
 								
-								<a href="Resources_for_employee_apply_job_jsp?job_id=<%=element.getJob().getJob_id()%>"><button class="apply">Apply</button></a>
+								<a href="Resources_for_employee_apply_job_jsp?job_id=<%=element.getJob().getJob_id()%>&company_id=<%=element.getCompany().getId()%>"><button class="apply">Apply</button></a>
 							</div>	
 				</article>	
 					
 					
 					
-					
+				
 					
 					
 					

@@ -9,6 +9,25 @@ main{
 	
 }
 
+.job_apply_message{
+	background-color: var(--success_background);
+	border: 1px solid green;
+	padding:14px;
+	text-align: center;
+	
+	font-family: "Montserrat", sans-serif;
+	  font-optical-sizing: auto;
+	  font-size:16px;
+	  font-weight: 500;
+	  font-style: normal;
+	  color:var(--contrast_dark);
+	  letter-spacing: 0.2px;
+	
+}
+
+
+
+
 .form_header{
 	box-sizing:border-box;
 	background-color: var(--main_color);

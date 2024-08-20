@@ -12,13 +12,13 @@
     
      <%
 //         
-				//ALL JOBS TO DISPLAY ON HOMEPAGE From Employee_homepage Servlet.
+				//ALL JOBS TO DISPLAY ON HOMEPAGE From "Employee_homepage" Servlet.
 				List<Job_wrapper> job_list = new ArrayList<Job_wrapper>();
 				if(request.getAttribute("attr_job_list")!=null){
 					job_list = (List<Job_wrapper>) request.getAttribute("attr_job_list");
 				}
 				
-				//List of saved job from DISPLAY_SAVED_JOB servlet.
+				//List of saved job from "DISPLAY_SAVED_JOB"  servlet.
 				List<Job_wrapper> saved_job_list = new ArrayList<Job_wrapper>();
 				if(request.getAttribute("attr_saved_job_list")!=null){
 					saved_job_list = (List<Job_wrapper>) request.getAttribute("attr_saved_job_list");

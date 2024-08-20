@@ -48,7 +48,7 @@
 
 		<%for(Job_wrapper element : saved_job_list){ %>
 				<section class="all_jobs">
-					<a href="Employee_selected_job?id=<%=element.getJob().getJob_id()%>" class="job_link">
+					<a href="Employee_selected_job?job_id=<%=element.getJob().getJob_id()%>" class="job_link">
 							<div class="job_datas">	
 									
 										

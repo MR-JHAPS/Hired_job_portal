@@ -492,7 +492,7 @@ public class DB_helper_employee implements DB_config{
 
 	
 //INSERTING THE APPLIED JOB OF EMPLOYEE:	
-	public boolean insert_applied_job(Connection db_connection, int cv_id, String employee_cover_letter, int employee_id, int job_id) {
+	public boolean insert_applied_job(Connection db_connection, int cv_id, String employee_cover_letter, int employee_id, int job_id, int company_id) {
 
 		try {
 			String sql_query = SP_INSERT_APPLIED_JOB;
@@ -501,6 +501,7 @@ public class DB_helper_employee implements DB_config{
 			prepare.setInt("sp_cv_id", cv_id);
 			prepare.setInt("sp_employee_id", employee_id);
 			prepare.setInt("sp_job_id", job_id);
+			prepare.setInt("sp_company_id", company_id);
 			prepare.execute();
 			System.out.println("Applied Job inserted Successfully.");
 			return true;

@@ -1,20 +1,19 @@
 @charset "ISO-8859-1";
 
 
-h1{
-	font-family: "Montserrat", sans-serif;
-  font-optical-sizing: auto;
-  font-size:30px;
-  font-weight: 600;
-  font-style: normal;
-}
+/* h1{ */
+/* 	font-family: "Montserrat", sans-serif; */
+/*   font-optical-sizing: auto; */
+/*   font-size:30px; */
+/*   font-weight: 600; */
+/*   font-style: normal; */
+/* } */
 
 
 main{
 	background-color: var(--contrast_light);
 	box-sizing: border-box;
 	padding:10px;
-	min-height: 640px;
 	
 }
 
@@ -200,30 +199,18 @@ h5{
 	font-weight: 500;
 	font-style: normal;
 	color: var(--blue_dark);
-	padding:3px;
-/*   font-family: "Roboto", sans-serif; */
-/*   font-weight: 500; */
-/*   font-style: normal; */
-  
+	padding:3px;  
 }
 
 p{
 	font-family: "Montserrat", sans-serif;
-  font-optical-sizing: auto;
-  font-size:13px;
-  font-weight: 500;
-  font-style: normal;
-  padding:8px 2px;
-  
-}
+	font-optical-sizing: auto;
+	font-size:13px;
+	font-weight: 500;
+	font-style: normal;
+	padding:8px 2px;
 
-/* li{ */
-/* 	font-family: "Montserrat", sans-serif; */
-/*   font-optical-sizing: auto; */
-/*   font-size:15px; */
-/*   font-weight: 500; */
-/*   font-style: normal; */
-/* } */
+}
 
 
 

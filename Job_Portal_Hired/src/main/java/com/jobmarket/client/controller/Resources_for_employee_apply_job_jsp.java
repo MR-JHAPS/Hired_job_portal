@@ -40,12 +40,20 @@ public class Resources_for_employee_apply_job_jsp extends HttpServlet implements
 		int employee_id = (Integer) session.getAttribute("attr_employee_id");
 		
 		int job_id= 0;
+		int company_id = 0;
 		
 		try {
-		    job_id = Integer.parseInt(request.getParameter("job_id"));
-		} catch (NumberFormatException e) {
-		    response.sendError(HttpServletResponse.SC_BAD_REQUEST, "Invalid job ID.");
-		    return;
+				job_id = Integer.parseInt(request.getParameter("job_id"));
+		}catch (NumberFormatException e) {
+			    response.sendError(HttpServletResponse.SC_BAD_REQUEST, "Invalid job ID.");
+			    return;
+		}
+		
+		try {
+				company_id = Integer.parseInt(request.getParameter("company_id"));
+		}catch (NumberFormatException e) {
+		    	response.sendError(HttpServletResponse.SC_BAD_REQUEST, "Invalid company ID.");
+		    	return;
 		}
 		
 		
@@ -66,6 +74,7 @@ public class Resources_for_employee_apply_job_jsp extends HttpServlet implements
 				
 				
 				request.setAttribute("attr_job_id", job_id);
+				request.setAttribute("attr_company_id", company_id);
 				System.out.println("THIS IS JOB ID: " + job_id);
 				request.getRequestDispatcher(EMPLOYEE_APPLY_JOB_JSP).forward(request, response);
 			
