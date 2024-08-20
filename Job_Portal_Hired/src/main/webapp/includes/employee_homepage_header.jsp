@@ -1,7 +1,10 @@
+<%@page import="com.jobmarket.Session_constants"%>
 <%@page import="com.jobmarket.hired.model.Country"%>
 <%@page import="com.jobmarket.company.model.Job_wrapper"%>
 <%@page import="com.jobmarket.client.model.Employee"%>
-<%-- <%@page import="com.jobmarket.company.model.Job_information"%> --%>
+
+<%@page import="com.jobmarket.Session_constants"%>
+
 <%@page import="java.util.ArrayList"%>
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
@@ -9,13 +12,13 @@
     
      <%
 //         
-
+				//ALL JOBS TO DISPLAY ON HOMEPAGE From Employee_homepage Servlet.
 				List<Job_wrapper> job_list = new ArrayList<Job_wrapper>();
 				if(request.getAttribute("attr_job_list")!=null){
 					job_list = (List<Job_wrapper>) request.getAttribute("attr_job_list");
 				}
 				
-				
+				//List of saved job from DISPLAY_SAVED_JOB servlet.
 				List<Job_wrapper> saved_job_list = new ArrayList<Job_wrapper>();
 				if(request.getAttribute("attr_saved_job_list")!=null){
 					saved_job_list = (List<Job_wrapper>) request.getAttribute("attr_saved_job_list");
@@ -31,16 +34,16 @@
              	String employee_update_success = (String) request.getAttribute("attr_employee_update_success");
               
               	session = request.getSession(false);
-             	Integer session_employee_id = (Integer) session.getAttribute("attr_employee_id");
-             	String session_employee_first_name = (String) session.getAttribute("attr_employee_first_name");
-             	String session_employee_last_name = (String) session.getAttribute("attr_employee_last_name");
-             	String session_employee_email = (String) session.getAttribute("attr_employee_email");
-             	String session_employee_password = (String) session.getAttribute("attr_employee_password");
-             	String session_employee_telephone = (String) session.getAttribute("attr_employee_telephone");
-             	String session_employee_address = (String) session.getAttribute("attr_employee_address");
-             	String session_employee_country = (String) session.getAttribute("attr_employee_country");
-             	int session_employee_country_id = (Integer) session.getAttribute("attr_employee_country_id");
-             	String session_employee_city = (String) session.getAttribute("attr_employee_city");
+             	Integer session_employee_id = (Integer) session.getAttribute( Session_constants.EMPLOYEE_SESSION_ID );
+             	String session_employee_first_name = (String) session.getAttribute( Session_constants.EMPLOYEE_SESSION_ADDRESS );
+             	String session_employee_last_name = (String) session.getAttribute(Session_constants.EMPLOYEE_SESSION_LAST_NAME);
+             	String session_employee_email = (String) session.getAttribute(Session_constants.EMPLOYEE_SESSION_EMAIL);
+             	String session_employee_password = (String) session.getAttribute(Session_constants.EMPLOYEE_SESSION_PASSWORD);
+             	String session_employee_telephone = (String) session.getAttribute(Session_constants.EMPLOYEE_SESSION_TELEPHONE);
+             	String session_employee_address = (String) session.getAttribute(Session_constants.EMPLOYEE_SESSION_ADDRESS);
+             	String session_employee_country = (String) session.getAttribute(Session_constants.EMPLOYEE_SESSION_COUNTRY);
+             	int session_employee_country_id = (Integer) session.getAttribute(Session_constants.EMPLOYEE_SESSION_COUNTRY_ID);
+             	String session_employee_city = (String) session.getAttribute(Session_constants.EMPLOYEE_SESSION_CITY);
          %>
     
 <!DOCTYPE html>

@@ -11,6 +11,7 @@ import java.sql.Connection;
 import java.util.List;
 
 import com.jobmarket.File_name;
+import com.jobmarket.Session_constants;
 import com.jobmarket.client.model.DB_helper_employee;
 import com.jobmarket.client.model.Employee;
 import com.jobmarket.client.model.Employee_wrapper;
@@ -18,7 +19,7 @@ import com.jobmarket.hired.model.Address;
 import com.jobmarket.hired.model.City;
 import com.jobmarket.hired.model.Country;
 
-public class Sign_in_employee_verification extends HttpServlet implements File_name {
+public class Sign_in_employee_verification extends HttpServlet implements File_name,Session_constants {
 	private static final long serialVersionUID = 1L;
 
 	public Sign_in_employee_verification() {
@@ -62,16 +63,16 @@ public class Sign_in_employee_verification extends HttpServlet implements File_n
 												
 								//creating user Session.
 								HttpSession session = request.getSession(true);
-								session.setAttribute("attr_employee_id", element.getEmployee().getId());
-								session.setAttribute("attr_employee_first_name", element.getEmployee().getFirst_name());
-								session.setAttribute("attr_employee_last_name", element.getEmployee().getLast_name());
-								session.setAttribute("attr_employee_email", element.getEmployee().getEmail());//because if the condition is true the employee_email == element.getEmail()
-								session.setAttribute("attr_employee_password", element.getEmployee().getPassword());
-								session.setAttribute("attr_employee_telephone", element.getEmployee().getTelephone());
-								session.setAttribute("attr_employee_address", element.getAddress().getAddress_name());
-								session.setAttribute("attr_employee_city", element.getCity().getCity_name());
-								session.setAttribute("attr_employee_country", element.getCountry().getCountry_name());
-								session.setAttribute("attr_employee_country_id", element.getCountry().getId());
+								session.setAttribute(EMPLOYEE_SESSION_ID, element.getEmployee().getId());
+								session.setAttribute(EMPLOYEE_SESSION_FIRST_NAME , element.getEmployee().getFirst_name());
+								session.setAttribute(EMPLOYEE_SESSION_LAST_NAME, element.getEmployee().getLast_name());
+								session.setAttribute(EMPLOYEE_SESSION_EMAIL , element.getEmployee().getEmail());//because if the condition is true the employee_email == element.getEmail()
+								session.setAttribute(EMPLOYEE_SESSION_PASSWORD , element.getEmployee().getPassword());
+								session.setAttribute(EMPLOYEE_SESSION_TELEPHONE , element.getEmployee().getTelephone());
+								session.setAttribute(EMPLOYEE_SESSION_ADDRESS , element.getAddress().getAddress_name());
+								session.setAttribute(EMPLOYEE_SESSION_CITY , element.getCity().getCity_name());
+								session.setAttribute(EMPLOYEE_SESSION_COUNTRY , element.getCountry().getCountry_name());
+								session.setAttribute(EMPLOYEE_SESSION_COUNTRY_ID , element.getCountry().getId());
 								//maximum active time:
 								session.setMaxInactiveInterval(1800);
 					

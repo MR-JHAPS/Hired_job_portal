@@ -1,6 +1,13 @@
 <%@page import="com.jobmarket.hired.model.Country"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    
+<%
+	String 
+
+%>    
+    
+    
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,6 +21,11 @@
 
 	<main>
 	
+		<% if()
+		
+		%>
+
+
 
 		<section class="account_setting_header">
 			<h3>ACCOUNT SETTINGS:</h3><br>
