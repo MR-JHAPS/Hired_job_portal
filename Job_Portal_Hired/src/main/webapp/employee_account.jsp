@@ -2,10 +2,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
     
-<%
-	String 
-
-%>    
+    
     
     
 <!DOCTYPE html>
@@ -21,7 +18,7 @@
 
 	<main>
 	
-		<% if()
+		<% 
 		
 		%>
 
@@ -40,11 +37,11 @@
 				
 						<label class="form_header">Your Account Details</label><br>
 						
-						<label for="e_name">First name</label><br>
-						<input type="text" id="e_name"  name="e_name" value="<%=session_employee_first_name %>"><br>
+						<label for="e_first_name">First name</label><br>
+						<input type="text" id="e_first_name"  name="e_first_name" value="<%=session_employee_first_name %>"><br>
 						
-						<label for="e_name">Last name</label><br>
-						<input type="text" id="e_name"  name="e_name" value="<%=session_employee_last_name %>"><br>
+						<label for="e_last_name">Last name</label><br>
+						<input type="text" id="e_last_name"  name="e_last_name" value="<%=session_employee_last_name %>"><br>
 						
 						<label for="e_email">Email</label><br>
 						<input type="email" id="e_email"  name="e_email" value="<%=session_employee_email%>" ><br>
@@ -63,7 +60,7 @@
 						
 		
 						<label for="e_country">Country</label><br>
-						<select name="country" id="country">
+						<select name="e_country" id="country">
 											<%	
 		// 									for(Country element : country_list){
 		// 										if(element.getId()==session_employee_country_id){
@@ -80,10 +77,10 @@
 						
 						
 				
-					<a  href="employee_delete_confirmation.jsp"><button>DELETE</button></a>
 				
 				
 				</form>
+									<a  href="employee_delete_confirmation.jsp"><button>DELETE</button></a>
 				
 				
 		

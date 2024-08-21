@@ -67,22 +67,52 @@ public interface DB_config {
 		String JOB_CONTRACT_ID = "contract_id";
 		String JOB_CONTRACT_NAME = "contract_name";	
 		
-		//COLUMN NAME OF --"JOB_SALARY"-- TABLE:	
+	//COLUMN NAME OF --"JOB_SALARY"-- TABLE:	
 		String JOB_SALARY_ID = "salary_id";
-		String JOB_SALARY_AMOUNT = "salary_amount";			
+		String JOB_SALARY_AMOUNT = "salary_amount";
+		
+	//COLUMN NAME OF "EMPLOYEE APPLIED JOB" TABLE:
+		String APPLIED_JOB_ID = "applied_job_id";
+		String APPLIED_JOB_COVER_LETTER = "cover_letter";
+		String APPLIED_JOB_FK_COMPANY = "FK_company";
+		String APPLIED_JOB_FK_EMPLOYEE = "FK_employee";
+		String APPLIED_JOB_FK_CV = "FK_cv";
+		String APPLIED_JOB_FK_JOB = "FK_job";
+		
+	//COLUMN NAME OF " EMPLOYEE CV TABLE" TABLE:	
+		
+		String CV_ID = "cv_id";
+		String CV_NAME = "cv_name";
+		String FK_EMPLOYEE = "FK_employee";
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 
 	
 //ALL Stored PROCEDURE:---------------------------------------------------------------------------------------------------------------------
 	//EMPLOYEE: Stored Procedure:
 	String SP_DISPLAY_EMPLOYEE_BY_EMAIL_PASSWORD = "call sp_display_employee_all_by_email_password(?,?)";
+	String SP_DISPLAY_EMPLOYEE_BY_ID = "call sp_display_employee_all_by_id(?)";
 	String SP_DISPLAY_ALL_EMPLOYEE = "call sp_display_all_employee()";
 	String SP_INSERT_EMPLOYEE = "call sp_insert_employee(?,?,?,?,?,?,?)";
+	String SP_DELETE_EMPLOYEE_BY_ID = "call sp_delete_employee_by_id(?)";
+	String SP_UPDATE_EMPLOYEE_ACCOUNT= "call sp_update_employee(?,?,?,?,?,?,?)";
 
 	
 	//COMPANY: Stored Procedure:
 	String SP_DISPLAY_COMPANY_BY_EMAIL_PASSWORD = "call sp_display_company_all_by_email_password (?,?)";
 	String SP_DISPLAY_ALL_COMPANY ="call sp_display_all_company()";
 	String SP_INSERT_COMPANY = "call sp_insert_company(?,?,?,?,?)";
+	String SP_UPDATE_COMPANY_ACCOUNT = "call sp_update_company(?,?,?,?,?,?)";
 	
 	//COUNTRY: STORED PROCEDURE:
 	String SP_DISPLAY_ALL_COUNTRY = "call sp_display_country()";
@@ -93,11 +123,13 @@ public interface DB_config {
 	String SP_DISPLAY_CITY = "call sp_display_city()";
 	String SP_DISPLAY_CITY_BY_NAME = "call sp_display_city_by_name(?)";
 	String SP_DISPLAY_CITY_BY_ID ="call sp_display_city_by_id(?)";
+	String SP_UPDATE_CITY = "call sp_update_city(?,?,?)";
 	
 	//ADDRESS: SP:
 	String SP_INSERT_ADDRESS = "call sp_insert_address(?,?,?)";
 	String SP_DISPLAY_ADDRESS_BY_NAME = "call sp_display_address_by_name(?)";
 	String SP_DISPLAY_ADDRESS_BY_ID = "call sp_display_address_by_id(?)";
+	String SP_UPDATE_ADDRESS = "call sp_update_address(?,?,?)";
 	
 	
 	//JOB_INFORMATION:
@@ -130,7 +162,8 @@ public interface DB_config {
 	String SP_DISPLAY_CV_BY_EMPLOYEE_ID = "call display_cv_by_employee_id(?)";
 	
 	
-	
+	//APPLIED JOB STORED PROCEDURE:
+	String SP_DISPLAY_APPLIED_JOB_BY_COMPANY_ID = "call display_applied_job_by_company_id(?)";
 	
 	
 	

@@ -19,7 +19,7 @@ public interface File_name {
 	String COMPANY_SIGN_UP_JSP = "company_sign_up.jsp";
 	String COMPANY_SIGN_IN_JSP ="company_sign_in.jsp";
 	String COMPANY_HOME_JSP = "company_home.jsp";
-
+	String COMPANY_APPLICANT_JSP = "company_applicants.jsp";
 
 	//HIRED:
 	String JOB_POSTING_JSP = "company_job_posting.jsp";

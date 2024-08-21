@@ -23,6 +23,18 @@
 
 	<main>
 		
+		
+				<!--  THIS MESSAGE IS ONLY AFTER UPDATING THE ACCOUNT DETAILS IS DONE-->	
+				<%
+					String account_update_message = request.getParameter("account_update_message");	
+				if (account_update_message!=null && !account_update_message.isEmpty()){ %>
+				<section class="account_update_message">
+					
+					<p><%=account_update_message %></p>
+				</section>
+				<%} %>
+				
+		
 	
 			<section class="search_bar">
 					<form method="POST" action="Employee_job_search">
@@ -35,13 +47,7 @@
 			</section>
 	
 	
-		<!--  THIS MESSAGE IS ONLY AFTER UPDATING THE ACCOUNT DETAILS IS DONE-->	
-		<%if (employee_update_success!=null){ %>
-		<section class="account_update_message">
-			
-			<p><%=employee_update_success %></p>
-		</section>
-		<%} %>
+	
 
 
 		<%for(Job_wrapper element : job_list){ %>

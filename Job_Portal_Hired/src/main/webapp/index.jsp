@@ -49,9 +49,12 @@
 		<%} %>
 		
 		
-		<% if(delete_success!=null){ %>
+		<% 
+		//IF EMPLOYEE ACCOUNT IS DELETED:
+		String account_delete_message= request.getParameter("account_delete_message");	
+		if(account_delete_message!=null && !account_delete_message.isEmpty()){ %>
 	        	<section class="delete_success_message">
-			           <h3><%=delete_success %></h3>
+			           <h3><%=account_delete_message %></h3>
 			           
 	        	</section>
   	
