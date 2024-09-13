@@ -1,6 +1,5 @@
 # HIRED & HIRE Job Portal
-I am working ON Branch --> DEVELOP.
-
+Data Validation is not yet done as it is just a demo Project.
 HIRED & HIRE is a dynamic web project that serves as a job portal. This application manages and displays data using the `a_hired.sql` database.
 
 ## Job Portal Features
