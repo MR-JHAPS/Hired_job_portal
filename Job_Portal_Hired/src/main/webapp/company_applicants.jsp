@@ -38,7 +38,7 @@
 					<h3>CV Name : </h3> <p><%=element.getCv().getCv_name() %></p>
 					<!--  we will look for cv id and then get the cv name just to be sure for the future for hashing the name -->
 					
-					<a href="Getting_cv_from_uploads?cv_id=<%=element.getCv().getCv_id() %>">Download CV</a>
+					<a href="Getting_cv_name_using_cv_id?cv_id=<%=element.getCv().getCv_id() %>">Download CV</a>
 				</div>	
 			
 			

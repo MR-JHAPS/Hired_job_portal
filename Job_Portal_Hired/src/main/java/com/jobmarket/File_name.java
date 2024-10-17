@@ -24,6 +24,10 @@ public interface File_name {
 	//HIRED:
 	String JOB_POSTING_JSP = "company_job_posting.jsp";
 	
+	String INDEX_JOBS_JSP = "index_jobs.jsp";
+	String INDEX_SELECTED_JOB_JSP = "index_selected_job.jsp";
+
+	
 	
 	
 	//CV FILE DIRECTORY:

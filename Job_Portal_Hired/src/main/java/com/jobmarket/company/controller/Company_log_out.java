@@ -27,7 +27,7 @@ public class Company_log_out extends HttpServlet implements File_name{
 		System.out.println("Company session ended");
 		
 		
-		request.getRequestDispatcher(INDEX_JSP).forward(request, response);
+		response.sendRedirect(COMPANY_SIGN_IN_JSP);
 		
 		
 		

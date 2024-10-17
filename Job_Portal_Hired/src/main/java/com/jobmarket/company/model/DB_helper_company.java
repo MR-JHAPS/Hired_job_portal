@@ -10,6 +10,7 @@ import java.sql.Types;
 import java.util.ArrayList;
 import java.util.List;
 import com.jobmarket.DB_config;
+import com.jobmarket.client.model.Cv_file;
 import com.jobmarket.hired.model.Address;
 import com.jobmarket.hired.model.City;
 import com.jobmarket.hired.model.Country;
@@ -125,12 +126,14 @@ public class DB_helper_company implements DB_config {
 				company_row.setTelephone(rs.getString(COMPANY_TELEPHONE));
 				company_row.setEmail(rs.getString(COMPANY_EMAIL));
 				company_row.setPassword(rs.getString(COMPANY_PASSWORD));
-				company_row.setFk_address(rs.getInt(COMPANY_FK_ADDRESS));
 
 				Address address_row = new Address();
+				address_row.setAddress_id(rs.getInt(ADDRESS_ID));
 				address_row.setAddress_name(rs.getString(ADDRESS_NAME));
 
 				City city_row = new City();
+
+				city_row.setCity_id(rs.getInt(CITY_ID));
 				city_row.setCity_name(rs.getString(CITY_NAME));
 
 				Country country_row = new Country();
@@ -324,6 +327,37 @@ public class DB_helper_company implements DB_config {
 		}
 
 		return new ArrayList<Applied_job>();
+	}
+
+	
+	
+//DISPLAYING CV_FILE_NAME USING CV_ID FROM EMPLOYEE_CV_TABLE.	
+	public List<Cv_file> get_cv_name_by_cv_id(Connection db_connection, int cv_id) {
+		
+		List<Cv_file> cv_list = new ArrayList<Cv_file>();
+		try {
+			String sql_query = SP_DISPLAY_CV_BY_CV_ID;
+			CallableStatement prepare = db_connection.prepareCall(sql_query);
+			prepare.setInt("sp_cv_id", cv_id);
+			prepare.execute();
+			ResultSet rs = prepare.getResultSet();
+			while(rs.next()) {
+				Cv_file cv_row = new Cv_file();
+				cv_row.setCv_id(rs.getInt(CV_ID));
+				cv_row.setCv_name(rs.getString(CV_NAME));
+				cv_row.setFk_employee(rs.getInt(CV_FK_EMPLOYEE));
+				cv_list.add(cv_row);
+			}
+			System.out.println("Cv_name of the employee using cv_id is displayed successfully.");
+			return cv_list;
+			
+		}catch(SQLException e) {
+			e.printStackTrace();
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		
+		return new ArrayList<Cv_file>();
 	}
 
 }// ends class

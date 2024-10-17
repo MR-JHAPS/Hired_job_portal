@@ -1,54 +1,20 @@
-<%-- <%@page import="com.jobmarket.company.model.Job_information"%> --%>
-<%@page import="java.util.ArrayList"%>
-<%@page import="java.util.List"%>
+<%@page import="com.jobmarket.company.model.Job_wrapper"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-    <%
-   
-    
-    
-    %>
-    
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Hired-Homepage</title>
+<title>Insert title here</title>
+
 <link rel="stylesheet" href="styles/index_header.css">
-<link rel="stylesheet" href="styles/employee_home_style.css">
+<link rel="stylesheet" href="styles/index_jobs.css">
 </head>
 <body>
-
-	<%@ include file="includes/employee_homepage_header.jsp" %>
+	<%@ include file="includes/index_header.jsp" %>
 
 	<main>
 
-					
-					
-					
-				<!--  THIS MESSAGE IS ONLY AFTER UPLOADING CV IS DONE-->	
-				<%
-					String cv_upload_message = (String) request.getAttribute("attr_upload_status");	
-				if (cv_upload_message!=null && !cv_upload_message.isEmpty()){ %>
-				<section class="cv_upload_message">
-					
-					<p><%=cv_upload_message %></p>
-				</section>
-				<%} %>
-				
-				
-		
-				<!--  THIS MESSAGE IS ONLY AFTER UPDATING THE ACCOUNT DETAILS IS DONE-->	
-				<%
-					String account_update_message = request.getParameter("account_update_message");	
-				if (account_update_message!=null && !account_update_message.isEmpty()){ %>
-				<section class="account_update_message">
-					
-					<p><%=account_update_message %></p>
-				</section>
-				<%} %>
-				
-		
 	
 			<section class="search_bar">
 					<form method="POST" action="Employee_job_search">
@@ -66,7 +32,11 @@
 
 		<%for(Job_wrapper element : job_list){ %>
 				<section class="all_jobs">
-					<a href="Employee_selected_job?job_id=<%=element.getJob().getJob_id()%>" class="job_link">
+					<a href="Index_selected_job?job_id=<%=element.getJob().getJob_id()%>" class="job_link">
+							<figure class="image">	
+								<img src="images/job_image.png">
+							</figure>
+							
 							<div class="job_datas">	
 									
 										
@@ -96,6 +66,7 @@
 	</main>
 	
 	<%@include file="includes/index_footer.jsp" %>
-	
+
+
 </body>
 </html>

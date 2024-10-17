@@ -18,6 +18,7 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.sql.Connection;
 
+import com.jobmarket.File_name;
 import com.jobmarket.client.model.DB_helper_employee;
 
 @WebServlet("/upload_cv")
@@ -27,7 +28,7 @@ import com.jobmarket.client.model.DB_helper_employee;
 	    maxRequestSize = 1024 * 1024 * 100 )
 
 
-public class Upload_cv extends HttpServlet {
+public class Upload_cv extends HttpServlet implements File_name {
     private static final long serialVersionUID = 1L;
 
     public Upload_cv() {
@@ -121,7 +122,8 @@ public class Upload_cv extends HttpServlet {
         		String upload_status = "CV uploaded successfully";
         		request.setAttribute("attr_upload_status", upload_status);
         		session.setAttribute("attr_file_name", file_name);
-        		 request.getRequestDispatcher("employee_account.jsp").forward(request, response);
+        		 //request.getRequestDispatcher("employee_account.jsp").forward(request, response);
+        		request.getRequestDispatcher(EMPLOYEE_HOMEPAGE).forward(request, response);
         	}
         	else {
         		 request.getRequestDispatcher("error.jsp").forward(request, response);

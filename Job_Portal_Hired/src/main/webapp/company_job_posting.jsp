@@ -61,7 +61,7 @@
 					
 					<article class="country_id">
 					<label for="country_id">COUNTRY ID </label>
-					<input type="text" name="country_id" value="<%=session.getAttribute("attr_company_country")%>" readonly="readonly" >
+					<input type="text" name="country_id" value="<%=session.getAttribute("attr_company_country_id")%>" readonly="readonly" >
 					
 					</article>
 				
