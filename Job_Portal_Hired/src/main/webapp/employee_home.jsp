@@ -67,6 +67,10 @@
 		<%for(Job_wrapper element : job_list){ %>
 				<section class="all_jobs">
 					<a href="Employee_selected_job?job_id=<%=element.getJob().getJob_id()%>" class="job_link">
+							<figure class="image">	
+								<img src="images/job_image.png">
+							</figure>
+					
 							<div class="job_datas">	
 									
 										
