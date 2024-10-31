@@ -34,6 +34,7 @@ main {
 header {
     height: 60px;
     background-color: var(--contrast_dark);
+/* 	background-color: var(--blue_dark); */
     text-align: center;
     padding: 15px 0;
 }
@@ -81,6 +82,7 @@ footer {
     justify-content: space-between;
     align-items: flex-start;
     background-color: var(--contrast_dark);
+/* background-color: var(--blue_dark); */
     padding: 20px 10%;
 }
 

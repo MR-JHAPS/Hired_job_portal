@@ -264,4 +264,14 @@
     <servlet-name>Index_selected_job</servlet-name>
     <url-pattern>/Index_selected_job</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>To_employee_profile</display-name>
+    <servlet-name>To_employee_profile</servlet-name>
+    <servlet-class>com.jobmarket.client.controller.To_employee_profile</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>To_employee_profile</servlet-name>
+    <url-pattern>/To_employee_profile</url-pattern>
+  </servlet-mapping>
 </web-app>

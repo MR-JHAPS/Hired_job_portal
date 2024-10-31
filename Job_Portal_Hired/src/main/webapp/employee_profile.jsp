@@ -17,47 +17,43 @@
 	
 			<section class="profile_picture">
 				<img src="images/job_image.png">
-			
 			</section>	
 			
 			<section class="profile_details">
 				<h3>YOUR PROFILE DETAILS</h3>
 				
-				<article class=row1>
-					
-					<p class="title"> First Name : Neraz</p>
-					<p class="title"> Last Name : Oli</p>
+				<article class=row1>	
+					<p class="title"><b>First Name : </b>  <%=session_employee_first_name %></p>
+					<p class="last_name"><b>Last Name :</b> <%=session_employee_last_name %></p>
 				</article>
 				
 				<article class=row2>
-					
-					<p class="title"> Email : nirajoli@gmail.com</p>
-					<p class="title"> Telephone : 798967868</p>
+					<p class="title"> <b>Email : </b><%=session_employee_email %></p>
+					<p class="telephone"> <b>Telephone :</b> <%=session_employee_telephone %></p>
 				</article>
 				
 				<article class=row3>
-					
-					<p class="title"> Address : Calle Irala</p>
-					<p class="title"> City : Bilbao</p>
+					<p class="title"> <b>Address :</b> <%=session_employee_address %></p>
+					<p class="city"> <b>City :</b> <%=session_employee_city %></p>
 				</article>
 				
 				<article class=row4>
-					
-					<p class="title"> Country: Spain</p>
-					
-				</article>
-					
-				
+					<p class="title"> <b>Country : </b> <%=session_employee_country %></p>	
+				</article>	
 			</section>
-			
 			
 			<section class="cv_details">
-				This contains the details of the cv.
-				
+				This contains the details of the cv.	
 			</section>
+			
 		</div>	
 
 
+		<section class="update">
+				<button><a href="Employee_account_settings">Update Account</a></button>
+		</section>
+			
+		
 
 
 	

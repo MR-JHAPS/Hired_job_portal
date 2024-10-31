@@ -7,6 +7,7 @@ public interface File_name {
 	
 	String EMPLOYEE_SIGN_UP_JSP = "employee_sign_up.jsp";
 	String EMPLOYEE_HOME_JSP = "employee_home.jsp";
+	String EMPLOYEE_PROFILE_JSP = "employee_profile.jsp";
 	String EMPLOYEE_ACCOUNT_JSP = "employee_account.jsp";
 	String EMPLOYEE_SELECTED_JOB_JSP = "employee_selected_job.jsp";
 	String EMPLOYEE_APPLY_JOB_JSP = "employee_apply_job_page.jsp";
