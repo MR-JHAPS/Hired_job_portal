@@ -34,10 +34,9 @@ public class Job_posting extends HttpServlet implements File_name {
 		
 		//There is no "IF" Because the company name is preset in job posting page from the active session of login. It is never null.
 		HttpSession session = request.getSession(false);
-		int company_id = (Integer) session.getAttribute("company_id");
+		int company_id = (Integer) session.getAttribute("attr_company_id");
 
 		int country_id = Integer.parseInt(request.getParameter("country_id"));
-
 		
 		int job_category_id=0 ;
 		if(request.getParameter("job_category")!=null) {

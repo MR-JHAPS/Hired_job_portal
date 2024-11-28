@@ -44,6 +44,7 @@ public class Upload_cv extends HttpServlet implements File_name {
     	DB_helper_employee db = new DB_helper_employee();
     	Connection db_connection = null;
     	String file_name ="";
+    	String original_file_name = "";
     	
         try {
             // Get the context and file directory
@@ -72,7 +73,7 @@ public class Upload_cv extends HttpServlet implements File_name {
             
             // Retrieve the file part
             Part filePart = request.getPart("cv_file");
-           // String fileName = filePart.getSubmittedFileName();
+             original_file_name = filePart.getSubmittedFileName();
 
             //setting specific filename as per user.
              file_name = user_name + "_" + user_id  + ".pdf";
@@ -98,7 +99,7 @@ public class Upload_cv extends HttpServlet implements File_name {
                 
                 if(is_cv_file_uploaded==true) {
                 db_connection = db.connect_db();
-                is_cv_file_inserted_db = db.insert_cv_name(db_connection, file_name, user_id);
+                is_cv_file_inserted_db = db.insert_cv_name(db_connection, file_name, original_file_name, user_id);
                 
                 System.out.println("CV name insert in table Status : " + is_cv_file_inserted_db +"cv file upload to server status : " + is_cv_file_uploaded );
                 

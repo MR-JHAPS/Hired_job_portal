@@ -137,6 +137,7 @@ public interface DB_config {
 	String SP_DISPLAY_ALL_JOB_INFORMATION_BY_COMPANY_ID = "call sp_display_all_job_information_by_company_id(?)";
 	String SP_DISPLAY_JOB_INFORMATION_BY_JOB_ID = "call sp_display_job_by_job_id(?)";
 	String SP_INSERT_JOB_INFORMATION = "call sp_insert_job_information(?,?,?,?,?,?,?,?)";
+	String SP_DELETE_JOB_BY_ID = "call sp_delete_job_by_id(?)";
 	
 	//JOB_category STORED PROCEDURE:
 	String SP_DISPLAY_JOB_CATEGORY = "call sp_display_job_category()";

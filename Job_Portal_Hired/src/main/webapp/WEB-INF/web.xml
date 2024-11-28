@@ -274,4 +274,24 @@
     <servlet-name>To_employee_profile</servlet-name>
     <url-pattern>/To_employee_profile</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>Delete_job_by_id</display-name>
+    <servlet-name>Delete_job_by_id</servlet-name>
+    <servlet-class>com.jobmarket.company.controller.Delete_job_by_id</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Delete_job_by_id</servlet-name>
+    <url-pattern>/Delete_job_by_id</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>To_company_profile</display-name>
+    <servlet-name>To_company_profile</servlet-name>
+    <servlet-class>com.jobmarket.company.controller.To_company_profile</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>To_company_profile</servlet-name>
+    <url-pattern>/To_company_profile</url-pattern>
+  </servlet-mapping>
 </web-app>

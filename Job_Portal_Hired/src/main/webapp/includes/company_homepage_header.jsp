@@ -9,15 +9,15 @@
     
     
     session = request.getSession(false);
- 	Integer session_employee_id = (Integer) session.getAttribute( Session_constants.COMPANY_SESSION_ID );
- 	String session_employee_name = (String) session.getAttribute( Session_constants.COMPANY_SESSION_NAME );
- 	String session_employee_email = (String) session.getAttribute(Session_constants.COMPANY_SESSION_EMAIL);
- 	String session_employee_password = (String) session.getAttribute(Session_constants.COMPANY_SESSION_PASSWORD);
- 	String session_employee_telephone = (String) session.getAttribute(Session_constants.COMPANY_SESSION_TELEPHONE);
- 	String session_employee_address = (String) session.getAttribute(Session_constants.COMPANY_SESSION_ADDRESS);
- 	String session_employee_country = (String) session.getAttribute(Session_constants.EMPLOYEE_SESSION_COUNTRY);
- 	int session_employee_country_id = (Integer) session.getAttribute(Session_constants.COMPANY_SESSION_COUNTRY_ID);
- 	String session_employee_city = (String) session.getAttribute(Session_constants.COMPANY_SESSION_CITY);
+ 	Integer session_company_id = (Integer) session.getAttribute( Session_constants.COMPANY_SESSION_ID );
+ 	String session_company_name = (String) session.getAttribute( Session_constants.COMPANY_SESSION_NAME );
+ 	String session_company_email = (String) session.getAttribute(Session_constants.COMPANY_SESSION_EMAIL);
+ 	String session_company_password = (String) session.getAttribute(Session_constants.COMPANY_SESSION_PASSWORD);
+ 	String session_company_telephone = (String) session.getAttribute(Session_constants.COMPANY_SESSION_TELEPHONE);
+ 	String session_company_address = (String) session.getAttribute(Session_constants.COMPANY_SESSION_ADDRESS);
+ 	String session_company_country = (String) session.getAttribute(Session_constants.EMPLOYEE_SESSION_COUNTRY);
+ 	int session_company_country_id = (Integer) session.getAttribute(Session_constants.COMPANY_SESSION_COUNTRY_ID);
+ 	String session_company_city = (String) session.getAttribute(Session_constants.COMPANY_SESSION_CITY);
 
     
  	List<Applied_job> applied_job_info = (List<Applied_job>) session.getAttribute(Session_constants.COMPANY_SESSION_APPLIED_JOB);
@@ -59,7 +59,9 @@
 				<li><a href="Company_start_job_posting">Post Job</a></li>
 				<li><a href="Display_job_applicant">Applicants</a></li>
 <!-- 				<li><a href="company_message.jsp">Messages</a></li> -->
-				<li class="float_right"><a href="Company_account_settings">My Account</a></li>		
+				<li class="float_right"><a href="To_company_profile">My Account</a></li>		
+<!-- 				<li class="float_right"><a href="/src/main/webapp/company_profile">My Account</a></li>		 -->
+	
 				<li class="float_right"><a href="Company_log_out">Log out : <%=session_name  %></a></li>
 			
 		</ul>

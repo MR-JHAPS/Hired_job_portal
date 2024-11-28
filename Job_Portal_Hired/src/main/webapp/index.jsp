@@ -10,7 +10,7 @@
    		String employee_not_signed_up= (String) request.getAttribute("attr_employee_not_signed_up") ;
    		
    		//
-    	String wrong_password = (String) request.getAttribute(":password_wrong");
+    	String wrong_password = (String) request.getAttribute("attr_wrong_login_password");
     	
     	//FROM Servlet - "Employee_delete_account"
     	String delete_success = (String) request.getAttribute("attr_delete_success");

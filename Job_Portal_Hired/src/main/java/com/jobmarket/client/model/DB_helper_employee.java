@@ -431,13 +431,14 @@ public class DB_helper_employee implements DB_config{
 	
 	
 //INSERTING THE CV NAME IN THE DATABASE:	
-	public boolean insert_cv_name(Connection db_connection, String file_name, int user_id) {
+	public boolean insert_cv_name(Connection db_connection, String file_name, String original_file_name, int user_id) {
 
 		try {
 			String sql_query = SP_INSERT_EMPLOYEE_CV;
 			CallableStatement prepare = db_connection.prepareCall(sql_query);
 			prepare.setInt("sp_employee_id", user_id);
 			prepare.setString("sp_cv_name", file_name);
+			prepare.setString("sp_cv_original_name", original_file_name);
 			prepare.execute();
 			
 			System.out.println("CV name inserted successfully in the Database");
@@ -475,6 +476,7 @@ public class DB_helper_employee implements DB_config{
 				Cv_file cv_file_row = new Cv_file();
 				cv_file_row.setCv_id(rs.getInt("cv_id"));
 				cv_file_row.setCv_name(rs.getString("cv_name"));
+				cv_file_row.setCv_original_name(rs.getString("cv_original_name"));
 				cv_file_row.setFk_employee(rs.getInt("FK_employee"));
 				cv_list.add(cv_file_row);
 			}

@@ -28,6 +28,7 @@ public class To_employee_profile extends HttpServlet implements File_name {
 		
 		if(session==null) {
 			response.sendRedirect("error.jsp");
+			return;
 		}
 		
 		
