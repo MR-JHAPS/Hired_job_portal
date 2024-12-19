@@ -1,4 +1,4 @@
-package com.jobmarket.client.controller;
+package com.jobmarket.hired.controller;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
@@ -14,27 +14,17 @@ import com.jobmarket.client.model.DB_helper_employee;
 import com.jobmarket.company.model.Job_wrapper;
 
 
-public class Employee_homepage extends HttpServlet implements File_name{
+public class Index_jobs extends HttpServlet implements File_name{
 	private static final long serialVersionUID = 1L;
        
-    
-    public Employee_homepage() {
+
+    public Index_jobs() {
         super();
     }
 
-
+	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-		
-		
-		//this parameter is brought from Employee_update_account to display message in employee Homepage.
-		String account_update_message="";
-		if(request.getParameter("account_update_message")!=null) {
-			account_update_message = request.getParameter("account_update_message");
-		}
-		
-		
-		
 		DB_helper_employee db= new DB_helper_employee();
 		Connection db_connection = null;
 		List<Job_wrapper> job_list = new ArrayList<Job_wrapper>();
@@ -66,13 +56,12 @@ public class Employee_homepage extends HttpServlet implements File_name{
 				
 				if(is_job_list_displayed==true) {
 				request.setAttribute("attr_job_list", job_list);
-				request.getRequestDispatcher(EMPLOYEE_HOME_JSP+"?account_update_message="+account_update_message).forward(request, response);
+				request.getRequestDispatcher(INDEX_JOBS_JSP).forward(request, response);
 				}
 				else {
-					response.sendError(500, "Error getting job list for Employee homepage");
+					response.sendError(500, "Error getting job list for homepage");
 				}
 		}
-		
 		
 	}
 

@@ -1,0 +1,7 @@
+@charset "ISO-8859-1";
+
+main{
+	background-color: var(--contrast_light);
+	box-sizing: border-box;
+	padding:10px;
+}

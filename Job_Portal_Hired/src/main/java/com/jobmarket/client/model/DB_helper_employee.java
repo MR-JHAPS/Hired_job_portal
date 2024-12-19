@@ -1,5 +1,6 @@
 package com.jobmarket.client.model;
 
+
 import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -9,6 +10,8 @@ import java.sql.SQLIntegrityConstraintViolationException;
 import java.sql.Types;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Logger;
+
 
 import com.jobmarket.DB_config;
 import com.jobmarket.company.model.Company;
@@ -73,21 +76,21 @@ public class DB_helper_employee implements DB_config{
 					employee_row.setEmail(rs.getString("email"));
 					employee_row.setPassword(rs.getString("employee_password"));
 					employee_row.setDate_of_birth(rs.getString("date_of_birth"));
-					employee_row.setFk_address(rs.getInt("FK_address"));
+					//employee_row.setFk_address(rs.getInt("FK_address"));
 					
 				Address	address_row = new Address();
-					//address_row.setAddress_id(rs.getInt("address_id"));
+					address_row.setAddress_id(rs.getInt("address_id"));
 					address_row.setAddress_name(rs.getString("address"));
-					address_row.setFk_city(rs.getInt("FK_city"));
+					//address_row.setFk_city(rs.getInt("FK_city"));
 					
 					
 				City city_row = new City();
-					//city_row.setCity_id(rs.getInt("city_id"));
+					city_row.setCity_id(rs.getInt("city_id"));
 					city_row.setCity_name(rs.getString("city_name"));
-					city_row.setFk_country(rs.getInt("FK_country"));
+					//city_row.setFk_country(rs.getInt("FK_country"));
 				
 				Country country_row = new Country();
-					country_row.setId(rs.getInt("FK_country"));
+					country_row.setId(rs.getInt("country_id"));
 					country_row.setCountry_name(rs.getString("country_name"));
 					Employee_wrapper employee_wrapper_row = new Employee_wrapper(employee_row, address_row, city_row, country_row);
 					//OR 
@@ -176,6 +179,8 @@ public class DB_helper_employee implements DB_config{
 		
 		return false;
 	}
+	
+	
 
 	public List<Job_wrapper> get_all_job_information(Connection db_connection) {
 		List<Job_wrapper> job_list = new ArrayList<Job_wrapper>();
@@ -426,13 +431,14 @@ public class DB_helper_employee implements DB_config{
 	
 	
 //INSERTING THE CV NAME IN THE DATABASE:	
-	public boolean insert_cv_name(Connection db_connection, String file_name, int user_id) {
+	public boolean insert_cv_name(Connection db_connection, String file_name, String original_file_name, int user_id) {
 
 		try {
 			String sql_query = SP_INSERT_EMPLOYEE_CV;
 			CallableStatement prepare = db_connection.prepareCall(sql_query);
 			prepare.setInt("sp_employee_id", user_id);
 			prepare.setString("sp_cv_name", file_name);
+			prepare.setString("sp_cv_original_name", original_file_name);
 			prepare.execute();
 			
 			System.out.println("CV name inserted successfully in the Database");
@@ -470,6 +476,7 @@ public class DB_helper_employee implements DB_config{
 				Cv_file cv_file_row = new Cv_file();
 				cv_file_row.setCv_id(rs.getInt("cv_id"));
 				cv_file_row.setCv_name(rs.getString("cv_name"));
+				cv_file_row.setCv_original_name(rs.getString("cv_original_name"));
 				cv_file_row.setFk_employee(rs.getInt("FK_employee"));
 				cv_list.add(cv_file_row);
 			}
@@ -515,6 +522,201 @@ public class DB_helper_employee implements DB_config{
 		
 		return false;
 	}
+
+	
+//DELETING EMPLOYEE ACCOUNT INFORMATION:	
+	public boolean delete_employee_information(Connection db_connection, int employee_id) {
+
+		try {
+			String sql_query = SP_DELETE_EMPLOYEE_BY_ID;
+			CallableStatement prepare = db_connection.prepareCall(sql_query);
+			prepare.setInt("sp_employee_id",employee_id);
+			prepare.execute();
+			System.out.println("Employee account deleted successfully.");
+			return true;
+			
+		}catch (Exception e) {
+			e.getStackTrace();
+		}
+		
+		return false;
+	}
+
+//----------------------------------------------GPT CODE---------------------------------------------------------------------------------
+	
+//	private static final java.util.logging.Logger logger = Logger.getLogger(DB_helper_employee.class.getName());
+//
+//    public boolean update_employee_information(Connection db_connection, Employee_wrapper employee_wrapper_object) {
+////        CallableStatement prepare_city = null;
+////        CallableStatement prepare_address = null;
+//        CallableStatement prepare_employee = null;
+//
+//        try {
+//            // Start transaction
+//            db_connection.setAutoCommit(false);
+//
+////            // Step 1: Update City
+////            String sql_query_city = SP_UPDATE_CITY;
+////            prepare_city = db_connection.prepareCall(sql_query_city);
+////            prepare_city.setInt("sp_city_id", employee_wrapper_object.getCity().getCity_id());
+////            prepare_city.setString("sp_city_name", employee_wrapper_object.getCity().getCity_name());
+////            prepare_city.setInt("sp_country_id", employee_wrapper_object.getCity().getFk_country());
+////            prepare_city.execute();
+////            logger.info("Employee City updated");
+////
+////            // Step 2: Update Address
+////            String sql_query_address = SP_UPDATE_ADDRESS;
+////            prepare_address = db_connection.prepareCall(sql_query_address);
+////            prepare_address.setInt("sp_address_id", employee_wrapper_object.getAddress().getAddress_id());
+////            prepare_address.setString("sp_address_name", employee_wrapper_object.getAddress().getAddress_name());
+////            prepare_address.setInt("sp_city_id", employee_wrapper_object.getAddress().getFk_city());
+////            prepare_address.execute();
+////            logger.info("Employee Address updated");
+//
+//            // Step 3: Update Employee Information
+//            String sql_query_employee = SP_UPDATE_EMPLOYEE_ACCOUNT;
+//            prepare_employee = db_connection.prepareCall(sql_query_employee);
+//            prepare_employee.setInt("sp_employee_id", employee_wrapper_object.getEmployee().getId());
+//            prepare_employee.setString("sp_first_name", employee_wrapper_object.getEmployee().getFirst_name());
+//            prepare_employee.setString("sp_last_name", employee_wrapper_object.getEmployee().getLast_name());
+//            prepare_employee.setString("sp_email", employee_wrapper_object.getEmployee().getEmail());
+//            prepare_employee.setString("sp_telephone", employee_wrapper_object.getEmployee().getTelephone());
+//            prepare_employee.setString("sp_password", employee_wrapper_object.getEmployee().getPassword());
+//            prepare_employee.setInt("sp_address_id", employee_wrapper_object.getEmployee().getFk_address());
+//            prepare_employee.execute();
+//            logger.info("Employee Information updated");
+//
+//            // Commit the transaction
+//            db_connection.commit();
+//            return true;
+//
+//        } catch (SQLException e) {
+//            logger.severe("SQL error while updating employee information: " + e.getMessage());
+//            try {
+//                if (db_connection != null) {
+//                    db_connection.rollback(); // Rollback the transaction on failure
+//                    logger.info("Transaction rolled back due to error.");
+//                }
+//            } catch (SQLException rollbackEx) {
+//                logger.severe("Error while rolling back the transaction: " + rollbackEx.getMessage());
+//            }
+//        } catch (Exception e) {
+//            logger.severe("Other error while updating employee information: " + e.getMessage());
+//        } finally {
+//            try {
+//                // Closing CallableStatements to prevent resource leakage
+////                if (prepare_city != null) prepare_city.close();
+////                if (prepare_address != null) prepare_address.close();
+//                if (prepare_employee != null) prepare_employee.close();
+//            } catch (SQLException e) {
+//                logger.severe("Error while closing the CallableStatements: " + e.getMessage());
+//            }
+//        }
+//
+//        return false;
+//    }
+//	
+//	
+//	
+	
+	
+	
+//-----------------------------------------------------------------------------------------------------------------------------------------
+	
+	
+//UPDATING EMPLOYEE ACCOUNT INFORMATION:	
+	public boolean update_employee_information(Connection db_connection, Employee_wrapper employee_wrapper_object) {
+
+		try {
+			String sql_query_city = SP_UPDATE_CITY ;
+			CallableStatement prepare_city = db_connection.prepareCall(sql_query_city);
+			prepare_city.setInt("sp_city_id", employee_wrapper_object.getCity().getCity_id());
+			prepare_city.setString("sp_city_name", employee_wrapper_object.getCity().getCity_name());
+			prepare_city.setInt("sp_country_id", employee_wrapper_object.getCity().getFk_country());
+			prepare_city.execute();
+			System.out.println("Employee City updated");
+			
+			
+			
+			String sql_query_address = SP_UPDATE_ADDRESS;
+			CallableStatement prepare_address = db_connection.prepareCall(sql_query_address);
+			prepare_address.setInt("sp_address_id", employee_wrapper_object.getAddress().getAddress_id());
+			prepare_address.setString("sp_address_name", employee_wrapper_object.getAddress().getAddress_name());
+			prepare_address.setInt("sp_city_id", employee_wrapper_object.getAddress().getFk_city());
+			prepare_address.execute();
+			System.out.println("Employee Address updated");
+			
+			String sql_query_employee = SP_UPDATE_EMPLOYEE_ACCOUNT;
+			CallableStatement prepare_employee = db_connection.prepareCall(sql_query_employee);
+			prepare_employee.setInt("sp_employee_id", employee_wrapper_object.getEmployee().getId() );
+			prepare_employee.setString("sp_first_name", employee_wrapper_object.getEmployee().getFirst_name() );
+			prepare_employee.setString("sp_last_name", employee_wrapper_object.getEmployee().getLast_name() );
+			prepare_employee.setString("sp_email", employee_wrapper_object.getEmployee().getEmail() );
+			prepare_employee.setString("sp_telephone", employee_wrapper_object.getEmployee().getTelephone() );
+			prepare_employee.setString("sp_password", employee_wrapper_object.getEmployee().getPassword() );
+			prepare_employee.setInt("sp_address_id", employee_wrapper_object.getEmployee().getFk_address() );
+			prepare_employee.execute();
+			System.out.println("Employee Information updated");
+			
+			return true;
+			
+			
+		}catch(SQLException e) {
+			e.printStackTrace();
+			System.out.println("SQL error while updating employee Information");
+		}catch(Exception e) {
+			e.printStackTrace();
+			System.out.println("Other error while updating employee Information");
+		}
+	
+		return false;
+	}//ends method
+	
+	
+
+	public List<Employee_wrapper> get_employee_by_id(Connection db_connection, Integer employee_id) {
+		List<Employee_wrapper> employee_list = new ArrayList<Employee_wrapper>();
+		try {
+				String sql_query = SP_DISPLAY_EMPLOYEE_BY_ID;
+				CallableStatement prepare = db_connection.prepareCall(sql_query);
+				prepare.setInt("sp_employee_id", employee_id);
+				prepare.execute();
+				ResultSet rs = prepare.getResultSet();
+				while(rs.next()) {
+					Employee_wrapper employee_wrapper_row = new Employee_wrapper();
+						employee_wrapper_row.getEmployee().setId(rs.getInt(EMPLOYEE_ID));
+						employee_wrapper_row.getEmployee().setFirst_name(rs.getString(EMPLOYEE_FIRST_NAME));
+						employee_wrapper_row.getEmployee().setLast_name(rs.getString(EMPLOYEE_LAST_NAME));
+						employee_wrapper_row.getEmployee().setEmail(rs.getString(EMPLOYEE_EMAIL));
+						employee_wrapper_row.getEmployee().setTelephone(rs.getString(EMPLOYEE_TELEPHONE));
+						employee_wrapper_row.getEmployee().setPassword(rs.getString(EMPLOYEE_PASSWORD));
+						employee_wrapper_row.getEmployee().setDate_of_birth(rs.getString(EMPLOYEE_DATE_OF_BIRTH));
+						
+						employee_wrapper_row.getAddress().setAddress_id(rs.getInt(ADDRESS_ID));
+						employee_wrapper_row.getAddress().setAddress_name(rs.getString(ADDRESS_NAME));
+						
+						employee_wrapper_row.getCity().setCity_id(rs.getInt(CITY_ID));
+						employee_wrapper_row.getCity().setCity_name(rs.getString(CITY_NAME));
+						
+						employee_wrapper_row.getCountry().setId(rs.getInt(COUNTRY_ID));
+						employee_wrapper_row.getCountry().setCountry_name(rs.getString(COUNTRY_NAME));
+						employee_list.add(employee_wrapper_row);
+									
+				}//Ends while loop
+				System.out.println("Employee by ID for updated session values done successfully");
+				return employee_list;
+				
+		}catch(SQLException e) {
+			e.printStackTrace();
+			//System.out.println(" SQL Error getting employee by id for updating new session datas");
+		}catch(Exception e) {
+				e.printStackTrace();
+				System.out.println("Other Error getting employee by id for updating new session datas");
+		}//ends catch
+		
+		
+		return new ArrayList<Employee_wrapper>();
+	}//ends method
 	
 	
 	

@@ -1,55 +1,56 @@
 package com.jobmarket.client.controller;
 
 import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 
 import java.io.IOException;
+import java.sql.Connection;
 
 import com.jobmarket.File_name;
-import com.jobmarket.Session_constants;
+import com.jobmarket.client.model.DB_helper_employee;
 
-
-public class Employee_log_out extends HttpServlet implements File_name,Session_constants {
+public class To_employee_profile extends HttpServlet implements File_name {
 	private static final long serialVersionUID = 1L;
-   
-    public Employee_log_out() {
+       
+    
+    public To_employee_profile() {
         super();
     }
 
-
+	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		
-		
-		HttpSession session = request.getSession(false);
-			
-		
-		
-		if(session != null) {
-			 
-			 System.out.println("session about to end" + session.getAttribute(EMPLOYEE_SESSION_EMAIL));
-			 session.invalidate();
-			 System.out.println("session ended");
-			 request.getRequestDispatcher(INDEX_JSP).forward(request, response);
-		}
-		else {
-			System.out.println("There is no session to end .");
-			request.getRequestDispatcher(INDEX_JSP).forward(request, response);
-		}
-		
-		
-		
-		request.getRequestDispatcher(INDEX_JSP).forward(request, response);
 
+		HttpSession session = request.getSession(false);
+		
+		if(session==null) {
+			response.sendRedirect("error.jsp");
+			return;
+		}
+		
+		
+		DB_helper_employee db = null;
+		Connection db_connection = null;
+		try {
+			 db = new DB_helper_employee();
+			 db_connection = db.connect_db();
+			
+			 request.getRequestDispatcher(EMPLOYEE_PROFILE_JSP).forward(request, response);
+			
+		}finally{
+			//disconnecting db.
+			db.disconnect(db_connection);
+		}
 		
 		
 		
 		
 		
-		
+	
+	
 	}
 
 	

@@ -35,7 +35,7 @@
               
               	session = request.getSession(false);
              	Integer session_employee_id = (Integer) session.getAttribute( Session_constants.EMPLOYEE_SESSION_ID );
-             	String session_employee_first_name = (String) session.getAttribute( Session_constants.EMPLOYEE_SESSION_ADDRESS );
+             	String session_employee_first_name = (String) session.getAttribute( Session_constants.EMPLOYEE_SESSION_FIRST_NAME );
              	String session_employee_last_name = (String) session.getAttribute(Session_constants.EMPLOYEE_SESSION_LAST_NAME);
              	String session_employee_email = (String) session.getAttribute(Session_constants.EMPLOYEE_SESSION_EMAIL);
              	String session_employee_password = (String) session.getAttribute(Session_constants.EMPLOYEE_SESSION_PASSWORD);
@@ -78,7 +78,7 @@
 				<li><a href="Display_saved_job">Saved Job</a></li>
 				
 <!-- 				<li><a href="#">Messages</a></li> -->
-				<li class="float_right"><a href="Employee_account_settings">My Account</a></li>		
+				<li class="float_right"><a href="To_employee_profile">My Account</a></li>		
 				<li class="float_right"><a href="Employee_log_out">Log out :  <%=session_employee_email %></a></li>
 			
 		</ul>

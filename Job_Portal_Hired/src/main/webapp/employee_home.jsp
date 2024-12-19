@@ -22,6 +22,32 @@
 	<%@ include file="includes/employee_homepage_header.jsp" %>
 
 	<main>
+
+					
+					
+					
+				<!--  THIS MESSAGE IS ONLY AFTER UPLOADING CV IS DONE-->	
+				<%
+					String cv_upload_message = (String) request.getAttribute("attr_upload_status");	
+				if (cv_upload_message!=null && !cv_upload_message.isEmpty()){ %>
+				<section class="cv_upload_message">
+					
+					<p><%=cv_upload_message %></p>
+				</section>
+				<%} %>
+				
+				
+		
+				<!--  THIS MESSAGE IS ONLY AFTER UPDATING THE ACCOUNT DETAILS IS DONE-->	
+				<%
+					String account_update_message = request.getParameter("account_update_message");	
+				if (account_update_message!=null && !account_update_message.isEmpty()){ %>
+				<section class="account_update_message">
+					
+					<p><%=account_update_message %></p>
+				</section>
+				<%} %>
+				
 		
 	
 			<section class="search_bar">
@@ -35,18 +61,16 @@
 			</section>
 	
 	
-		<!--  THIS MESSAGE IS ONLY AFTER UPDATING THE ACCOUNT DETAILS IS DONE-->	
-		<%if (employee_update_success!=null){ %>
-		<section class="account_update_message">
-			
-			<p><%=employee_update_success %></p>
-		</section>
-		<%} %>
+	
 
 
 		<%for(Job_wrapper element : job_list){ %>
 				<section class="all_jobs">
 					<a href="Employee_selected_job?job_id=<%=element.getJob().getJob_id()%>" class="job_link">
+							<figure class="image">	
+								<img src="images/job_image.png">
+							</figure>
+					
 							<div class="job_datas">	
 									
 										

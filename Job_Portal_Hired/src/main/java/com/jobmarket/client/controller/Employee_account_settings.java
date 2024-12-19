@@ -12,11 +12,12 @@ import java.sql.Connection;
 import java.util.List;
 
 import com.jobmarket.File_name;
+import com.jobmarket.Session_constants;
 import com.jobmarket.client.model.DB_helper_employee;
 import com.jobmarket.hired.model.Country;
 
 
-public class Employee_account_settings extends HttpServlet implements File_name{
+public class Employee_account_settings extends HttpServlet implements File_name,Session_constants{
 	private static final long serialVersionUID = 1L;
        
 
@@ -28,7 +29,7 @@ public class Employee_account_settings extends HttpServlet implements File_name{
 		
 		
 		HttpSession session = request.getSession(false);
-		Integer employee_id = (Integer) session.getAttribute("attr_employee_id");
+		Integer employee_id = (Integer) session.getAttribute(EMPLOYEE_SESSION_ID);
 		
 		DB_helper_employee db = null;
 		Connection db_connection = null;

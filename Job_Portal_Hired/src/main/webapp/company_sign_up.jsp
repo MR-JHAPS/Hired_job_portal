@@ -42,6 +42,10 @@
 								<label for="company_telephone">Telephone  </label>
 								<input type="text" name="company_telephone" id="company_telephone" placeholder="Company telephone"><br><br><br>
 								
+								<label for="company_email">Company Email </label>
+								<input type="email" name="company_email" id="company_email" placeholder="Company email"><br><br><br>
+							
+								
 								<label for="country">Country </label>
 								<select name="country" id="country">
 									<%for(Country element : country_list){ %>
@@ -59,6 +63,11 @@
 								<label for="company_password">Your Password </label>
 								<input type="password" name="company_password" id="company_password" placeholder="Password"><br><br><br>
 								
+								<label for="company_password_repeat">Repeat Your Password </label>
+								<input type="password" name="company_password_repeat" id="company_password_repeat" placeholder="Password"><br><br><br>
+								
+								
+								
 								<input type ="reset" name="reset" id="reset" value="Reset">
 								<input type="submit" name="sign_up_company" id="sign_up_company" value="Sign up">
 						</article>
@@ -67,12 +76,8 @@
 					
 					
 						<article class="form_right">
-								<label for="company_email">Company Email </label>
-								<input type="email" name="company_email" id="company_email" placeholder="Company email"><br><br><br>
-							
 								
-								<label for="company_password_repeat">Repeat Your Password </label>
-								<input type="password" name="company_password_repeat" id="company_password_repeat" placeholder="Password"><br><br><br><br><br><br><br><br><br><br><br>
+								
 								
 								
 									

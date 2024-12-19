@@ -69,7 +69,9 @@ public class Sign_in_employee_verification extends HttpServlet implements File_n
 								session.setAttribute(EMPLOYEE_SESSION_EMAIL , element.getEmployee().getEmail());//because if the condition is true the employee_email == element.getEmail()
 								session.setAttribute(EMPLOYEE_SESSION_PASSWORD , element.getEmployee().getPassword());
 								session.setAttribute(EMPLOYEE_SESSION_TELEPHONE , element.getEmployee().getTelephone());
+								session.setAttribute(EMPLOYEE_SESSION_ADDRESS_ID , element.getAddress().getAddress_id());
 								session.setAttribute(EMPLOYEE_SESSION_ADDRESS , element.getAddress().getAddress_name());
+								session.setAttribute(EMPLOYEE_SESSION_CITY_ID , element.getCity().getCity_id());
 								session.setAttribute(EMPLOYEE_SESSION_CITY , element.getCity().getCity_name());
 								session.setAttribute(EMPLOYEE_SESSION_COUNTRY , element.getCountry().getCountry_name());
 								session.setAttribute(EMPLOYEE_SESSION_COUNTRY_ID , element.getCountry().getId());

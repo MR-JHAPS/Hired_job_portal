@@ -67,9 +67,16 @@ public class Sign_in_company_verification extends HttpServlet implements File_na
 								session.setAttribute("attr_company_email", element.getCompany().getEmail());
 								session.setAttribute("attr_company_password", element.getCompany().getPassword());
 								session.setAttribute("attr_company_telephone", element.getCompany().getTelephone());
+								
+								session.setAttribute("attr_company_address_id",element.getAddress().getAddress_id());
 								session.setAttribute("attr_company_address",element.getAddress().getAddress_name());
+
+								session.setAttribute("attr_company_city_id", element.getCity().getCity_id());
 								session.setAttribute("attr_company_city", element.getCity().getCity_name());
-								session.setAttribute("attr_company_country", element.getCountry().getId());
+								
+								session.setAttribute("attr_company_country_id", element.getCountry().getId());
+								session.setAttribute("attr_company_country_name", element.getCountry().getCountry_name());
+
 								
 								session.setMaxInactiveInterval(1800);
 								request.getRequestDispatcher("Display_company_posted_job").forward(request, response);

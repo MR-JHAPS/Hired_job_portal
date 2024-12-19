@@ -30,6 +30,13 @@
 
 	<main>
 			<section class="form_outer_area">
+				<%if(password_error!=null){ %>
+						<div class="password_error">
+						
+							<p><%=password_error %></p>
+						</div>
+				<%} %>	
+			
 				<form class="form_area" method="POST" action="Sign_up_employee_insert">
 					
 						<article class="form_left">
@@ -38,6 +45,9 @@
 								
 								<label for="last_name">Last name </label>
 								<input type="text" name="last_name" id="last_name" placeholder="Last name"><br><br><br>
+								
+								<label for="email">Email </label>
+								<input type="email" name="email" id="email" placeholder="Email"><br><br><br>
 								
 								<label for="telephone">Telephone </label>
 								<input type="text" name="telephone" id="telephone" placeholder=" telephone "><br><br><br>
@@ -52,7 +62,15 @@
 									<br><br><br>
 								
 <!-- 								<input type="text" name="country" id="country" placeholder="Country"><br><br><br> -->
+								<label for="address">Address </label>
+								<input type="text" name="address" id="address" placeholder="Address"><br><br><br>
 								
+								<label for="date_of_birth">Date of Birth</label>
+								<input type="date" name="date_of_birth" id="date_of_birth" placeholder="Date of Birth"><br><br><br>
+								
+								
+								<label for="city">City Name </label>
+								<input type="text" name="city" id="city" placeholder="City"><br><br><br>
 								
 								
 								<label for="password">Your Password </label>
@@ -66,38 +84,15 @@
 								<input type="submit" name="sign_up_employee" id="sign_up_employee" value="Sign up">
 						</article>
 					
-					
-					
-					
 						<article class="form_right">
-						
-								<label for="address">Address </label>
-								<input type="text" name="address" id="address" placeholder="Address"><br><br><br>
-								
-								<label for="email">Email </label>
-								<input type="email" name="email" id="email" placeholder="Email"><br><br><br>
-							
-								<label for="date_of_birth">Date of Birth</label>
-								<input type="date" name="date_of_birth" id="date_of_birth" placeholder="Date of Birth"><br><br><br>
-								
-								
-								<label for="city">City Name </label>
-								<input type="text" name="city" id="city" placeholder="City"><br><br><br>
-								
-												<%if(password_error!=null){ %>
-														<div class="password_error">
-														
-															<p><%=password_error %></p>
-														</div>
-												<%} %>	
-								
-								
+							<%if(password_error!=null){ %>
+									<div class="password_error">
+									
+										<p><%=password_error %></p>
+									</div>
+							<%} %>	
 						</article>
-						
-						
 				</form>
-			
-			
 			</section>
 	</main>
 

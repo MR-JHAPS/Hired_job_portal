@@ -9,11 +9,6 @@ import jakarta.servlet.http.HttpSession;
 import java.io.IOException;
 import java.net.URLEncoder;
 import java.sql.Connection;
-import java.util.List;
-import org.apache.tomcat.util.http.fileupload.disk.DiskFileItemFactory;
-import org.apache.tomcat.util.http.fileupload.servlet.ServletFileUpload;
-import org.apache.tomcat.util.buf.Utf8Encoder;
-import org.apache.tomcat.util.http.fileupload.*;
 import com.jobmarket.File_name;
 import com.jobmarket.client.model.DB_helper_employee;
 

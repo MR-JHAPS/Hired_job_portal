@@ -7,6 +7,7 @@ public interface File_name {
 	
 	String EMPLOYEE_SIGN_UP_JSP = "employee_sign_up.jsp";
 	String EMPLOYEE_HOME_JSP = "employee_home.jsp";
+	String EMPLOYEE_PROFILE_JSP = "employee_profile.jsp";
 	String EMPLOYEE_ACCOUNT_JSP = "employee_account.jsp";
 	String EMPLOYEE_SELECTED_JOB_JSP = "employee_selected_job.jsp";
 	String EMPLOYEE_APPLY_JOB_JSP = "employee_apply_job_page.jsp";
@@ -19,10 +20,15 @@ public interface File_name {
 	String COMPANY_SIGN_UP_JSP = "company_sign_up.jsp";
 	String COMPANY_SIGN_IN_JSP ="company_sign_in.jsp";
 	String COMPANY_HOME_JSP = "company_home.jsp";
-
+	String COMPANY_APPLICANT_JSP = "company_applicants.jsp";
+	String COMPANY_PROFILE_JSP = "company_profile.jsp";
 
 	//HIRED:
 	String JOB_POSTING_JSP = "company_job_posting.jsp";
+	
+	String INDEX_JOBS_JSP = "index_jobs.jsp";
+	String INDEX_SELECTED_JOB_JSP = "index_selected_job.jsp";
+
 	
 	
 	

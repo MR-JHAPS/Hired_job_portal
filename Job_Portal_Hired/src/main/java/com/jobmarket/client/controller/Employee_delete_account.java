@@ -1,18 +1,25 @@
 package com.jobmarket.client.controller;
 
 import jakarta.servlet.ServletException;
-import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
+
 import java.io.IOException;
+import java.net.URLEncoder;
+import java.nio.charset.StandardCharsets;
 import java.sql.Connection;
 
+
+
+
 import com.jobmarket.File_name;
+import com.jobmarket.Session_constants;
 import com.jobmarket.client.model.DB_helper_employee;
 
 
-public class Employee_delete_account extends HttpServlet implements File_name{
+public class Employee_delete_account extends HttpServlet implements File_name,Session_constants{
 	private static final long serialVersionUID = 1L;
        
    
@@ -25,30 +32,56 @@ public class Employee_delete_account extends HttpServlet implements File_name{
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		
-		int employee_id = Integer.parseInt(request.getParameter("id"));
+		HttpSession session = request.getSession(false);
+		//if the session is expired or the attribute value is null.
+		if(session==null || session.getAttribute(EMPLOYEE_SESSION_ID)==null) {
+			response.sendRedirect(INDEX_JSP);
+			return;
+		}
 		
-		//connection to db:
+		
+		
+		
+		int employee_id = (Integer) session.getAttribute(EMPLOYEE_SESSION_ID);
+		
 		DB_helper_employee db = new DB_helper_employee();
-		Connection db_connection = db.connect_db();
+		Connection db_connection = null;
+		boolean is_employee_account_deleted = false;
 		
-		//Executing DB:
-		Boolean is_deleted = db.delete_employee_information(db_connection, employee_id); 
+		try {
+			//connection to DB:
+			db_connection = db.connect_db();
+			
+			is_employee_account_deleted = db.delete_employee_information(db_connection, employee_id); 
+		}catch (Exception e) {
+			e.printStackTrace();
 		
 		
-		//Disconnecting DB:
-		db.disconnect(db_connection);
-		
-		
-		if(is_deleted == true) {
-			String delete_success = "Account deletion Successful.";
-			request.setAttribute("attr_delete_success", delete_success);
-			request.getRequestDispatcher(INDEX_JSP).forward(request, response);
+		}finally {
+			if(db_connection!=null) {
+				//Disconnecting DB:
+				db.disconnect(db_connection);
+			}
+			
+			if(is_employee_account_deleted==true) {
+				String account_delete_message = "Your Account Is Deleted Successfully.";
+				String encoded_message = URLEncoder.encode(account_delete_message , StandardCharsets.UTF_8);
+				
+				response.sendRedirect(INDEX_JSP +"?account_delete_message=" + encoded_message);
+			}
+			else {
+				String message = "Cannot delete your account something went wrong.";
+				response.sendError(500, message);
+			}
+			
 		}
 		
-		else {
-			System.out.println("Servlet error in deletion of employee account");
-			request.getRequestDispatcher(EMPLOYEE_ACCOUNT_JSP).forward(request, response);
-		}
+		
+	
+		
+		
+		
+		
 		
 		
 		
