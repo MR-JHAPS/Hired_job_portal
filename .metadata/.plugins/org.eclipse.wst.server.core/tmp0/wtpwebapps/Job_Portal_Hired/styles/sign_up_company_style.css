@@ -1,0 +1,121 @@
+@charset "ISO-8859-1";
+
+/* Root Variables for Consistent Colors */
+:root {
+    --main_color: #007BFF;
+    --main_light: #FFFFFF;
+    --contrast_color: #FFC107;
+    --contrast_light: #F1F1F1;
+    --contrast_dark: #0056B3;
+    --blue_dark: #495E7A;
+    --warning_dark: #9C1027;
+    --warning_light: #B83806;
+    --warning_background: #FFCDD2;
+    --success_background: #E0FEE0;
+}
+
+/* Global Styles */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+main {
+    padding: 20px;
+    background-color: var(--contrast_light);
+}
+
+/* Form Area */
+.form_outer_area {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form_area {
+    width: 100%;
+    max-width: 900px; /* Limit the maximum width */
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    background-color: var(--main_light);
+    border-radius: 10px;
+}
+
+.form_left, .form_right {
+    width: 48%; /* Ensure both sides fit within the container */
+    padding: 10px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+/* Input Fields */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+select {
+    padding: 10px;
+    width: 100%; /* Full width */
+    height: 40px; /* Increased height for better usability */
+    background-color: #EBF5FF;
+    border: 1px solid #ccc; /* Border for visibility */
+    border-radius: 5px;
+    margin-bottom: 15px; /* Space between inputs */
+    transition: border-color 0.3s; /* Smooth transition */
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+select:focus {
+    border-color: var(--main_color); /* Highlight on focus */
+}
+
+/* Buttons */
+input[type="reset"],
+input[type="submit"] {
+    width: 100%; /* Full width for buttons */
+    height: 50px; /* Consistent button height */
+    background-color: var(--main_color);
+    color: var(--contrast_light);
+    border: none; /* Remove default border */
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 10px; /* Space above buttons */
+    font-size: 16px; /* Larger font for buttons */
+    transition: background-color 0.3s; /* Smooth transition */
+}
+
+/* Hover Effects for Buttons */
+input[type="reset"]:hover {
+    background-color: var(--warning_dark);
+}
+
+input[type="submit"]:hover {
+    background-color: var(--contrast_dark);
+}
+
+/* Error Message Styles */
+.password_error {
+    color: var(--warning_dark);
+    background-color: var(--warning_background);
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 15px; /* Space above error message */
+    text-align: center; /* Center text in error box */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .form_area {
+        flex-direction: column; /* Stack vertically */
+    }
+
+    .form_left, .form_right {
+        width: 100%; /* Full width on smaller screens */
+    }
+}

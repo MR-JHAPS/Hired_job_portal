@@ -1,0 +1,122 @@
+@charset "ISO-8859-1";
+
+:root {
+    --main_color: #007BFF;
+    --main_light: #FFFFFF;
+    --contrast_color: #FFC107;
+    --contrast_light: #F1F1F1;
+    --contrast_dark: #0056B3;
+    --blue_dark: #495E7A;
+    --warning_dark: #9C1027;
+    --warning_light: #B83806;
+    --warning_background: #FFCDD2;
+    --success_background: #E0FEE0;
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: "Montserrat", sans-serif;
+    background-color: var(--contrast_light);
+    color: #333;
+}
+
+main {
+    min-height: 490px;
+    background-color: var(--contrast_light);
+    padding: 20px;
+}
+
+header {
+    height: 60px;
+    background-color: var(--contrast_dark);
+/* 	background-color: var(--blue_dark); */
+    text-align: center;
+    padding: 15px 0;
+}
+
+h1 {
+    color: var(--contrast_light);
+    font-size: 30px;
+    font-weight: 600;
+}
+
+nav {
+    background-color: var(--main_light);
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+nav > ul {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 10px 0px;
+}
+
+nav > ul > li {
+    list-style: none;
+    margin: 0 0px;
+}
+
+nav > ul > li > a {
+    text-decoration: none;
+    color: var(--main_color);
+    padding: 10px 40px;
+    border-radius: 0px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+nav a:hover {
+    background-color: var(--contrast_dark);
+    color: var(--contrast_light);
+}
+
+footer {
+    height: 170px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    background-color: var(--contrast_dark);
+/* background-color: var(--blue_dark); */
+    padding: 20px 10%;
+}
+
+footer li {
+    list-style: none;
+}
+
+footer li a {
+    text-decoration: none;
+    color: var(--main_light);
+    display: inline-block;
+    width: 180px;
+    padding: 8px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 300;
+    letter-spacing: 0.5px;
+    transition: color 0.3s;
+}
+
+.footer_left,
+.footer_center,
+.footer_right {
+    width: 33.33%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.footer_center {
+    justify-content: center;
+}
+
+footer a:hover {
+    color: var(--contrast_light);
+    text-decoration: underline;
+}

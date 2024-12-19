@@ -1,0 +1,213 @@
+@charset "ISO-8859-1";
+
+:root {
+    --job_header_height: 154.8px;
+}
+
+body {
+    min-width: 672px;
+    font-family: "Montserrat", sans-serif; /* Set a global font family */
+}
+
+main {
+    width: auto;
+    padding: 20px;
+}
+
+/* Job Box */
+.job_box {
+    box-sizing: border-box;
+    width: 70%;
+    min-width: 620px;
+    margin: auto;
+}
+
+/* Job Header */
+.job_header {
+    box-sizing: border-box;
+    padding: 10px;
+    margin-bottom: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    font-size: 18px;
+    font-weight: 650;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.job_header .image {
+    box-sizing: border-box;
+    width: 20%;
+    min-width: 150px;
+}
+
+.job_header img {
+    width: 100%;
+    border-radius: 10px; /* Rounded corners for image */
+}
+
+/* Job Title */
+.job_header .title {
+    box-sizing: border-box;
+    width: 50%;
+    min-width: 235px;
+    height: var(--job_header_height);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Buttons */
+.job_header .buttons {
+    box-sizing: border-box;
+    width: 30%;
+    height: var(--job_header_height);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.buttons button {
+    width: 200px;
+    height: 40px;
+    background-color: var(--main_color);
+    color: var(--contrast_light);
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px; /* Adjust margin */
+    font-size: 14px;
+}
+
+.buttons .apply {
+    background-color: var(--contrast_dark);
+}
+
+.buttons .apply:hover {
+    background-color: var(--blue_dark);
+}
+
+/* Save Button */
+.buttons .save img {
+    height: 16px;
+    width: 16px;
+}
+
+.buttons .save a {
+    color: var(--blue_dark);
+    text-decoration: none;
+}
+
+.buttons .save a:hover {
+    color: var(--contrast_dark);
+}
+
+/* Job Body */
+.job_body {
+    box-sizing: border-box;
+    padding: 20px;
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.job_body .description {
+    box-sizing: border-box;
+    margin: 20px 2px;
+    padding: 5px 0;
+}
+
+.job_body h3 {
+    padding: 5px 0;
+    font-size: 19px;
+    font-weight: 650;
+}
+
+.job_body h5 {
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.job_body h5 img {
+    margin-top: 2px;
+}
+
+.job_body h5 a {
+    text-decoration: none;
+    color: black;
+}
+
+.job_body h5 a:hover {
+    color: var(--main_color);
+}
+
+.job_body p {
+    font-size: 13px;
+    padding: 0 2px;
+}
+
+.job_body label {
+    font-size: 15px;
+    font-weight: 600;
+    padding: 2px;
+}
+
+/* Search Bar Styles */
+.search_bar {
+    text-align: center; /* Center the search bar */
+}
+
+.search_bar form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+.search_bar input[type="text"] {
+    padding: 10px;
+    height: 40px;
+    width: 60%;
+    margin-right: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc; /* Light border */
+}
+
+input[type="submit"] {
+    width: 25%;
+    height: 40px;
+    background-color: var(--main_color);
+    color: var(--contrast_light);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s; /* Smooth transition */
+}
+
+input[type="submit"]:hover {
+    background-color: var(--contrast_dark);
+}
+
+/* Job List Styles */
+.all_jobs {
+    box-sizing: border-box;
+    width: 100%;
+    margin-bottom: 20px; /* Add space between job listings */
+    background-color: var(--main_light);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 20px; /* Padding for job sections */
+    transition: background-color 0.3s; /* Smooth transition */
+}
+
+.all_jobs:hover {
+    background-color: var(--contrast_light);
+}
+
+/* Text Styles */
+h3, h5, p {
+    margin: 0; /* Reset margin for headings and paragraphs */
+}

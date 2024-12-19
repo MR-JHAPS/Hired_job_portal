@@ -1,0 +1,11 @@
+127.0.0.1 - - [02/Dec/2024:11:26:59 +0100] "GET / HTTP/1.1" 404 752
+127.0.0.1 - - [02/Dec/2024:11:27:01 +0100] "GET /Job_Portal_Hired/ HTTP/1.1" 200 4295
+127.0.0.1 - - [02/Dec/2024:11:27:01 +0100] "GET /Job_Portal_Hired/css/style.css HTTP/1.1" 404 790
+127.0.0.1 - - [02/Dec/2024:11:27:01 +0100] "GET /Job_Portal_Hired/styles/index_header.css HTTP/1.1" 200 2348
+127.0.0.1 - - [02/Dec/2024:11:27:01 +0100] "GET /Job_Portal_Hired/styles/index_style.css HTTP/1.1" 200 6664
+127.0.0.1 - - [02/Dec/2024:11:27:18 +0100] "POST /Job_Portal_Hired/Sign_in_employee_verification HTTP/1.1" 200 6463
+127.0.0.1 - - [02/Dec/2024:11:27:18 +0100] "GET /Job_Portal_Hired/styles/employee_home_style.css HTTP/1.1" 200 4184
+127.0.0.1 - - [02/Dec/2024:11:27:18 +0100] "GET /Job_Portal_Hired/images/job_image.png HTTP/1.1" 200 5949
+127.0.0.1 - - [02/Dec/2024:11:27:18 +0100] "GET /Job_Portal_Hired/images/save_icon_blue.png HTTP/1.1" 200 505
+127.0.0.1 - - [02/Dec/2024:11:27:22 +0100] "GET /Job_Portal_Hired/Employee_selected_job?job_id=1 HTTP/1.1" 200 3843
+127.0.0.1 - - [02/Dec/2024:11:27:22 +0100] "GET /Job_Portal_Hired/styles/employee_selected_job_style.css HTTP/1.1" 200 4062

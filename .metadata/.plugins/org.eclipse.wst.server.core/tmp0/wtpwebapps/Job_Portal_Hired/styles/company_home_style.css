@@ -1,0 +1,149 @@
+@charset "ISO-8859-1";
+
+
+/* h1{ */
+/* 	font-family: "Montserrat", sans-serif; */
+/*   font-optical-sizing: auto; */
+/*   font-size:30px; */
+/*   font-weight: 600; */
+/*   font-style: normal; */
+/* } */
+
+main{
+	background-color: var(--contrast_light);
+	box-sizing: border-box;
+	padding:10px;
+}
+
+.search_bar form{
+	box-sizing:border-box;
+	border-radius: 10px;
+	width:70%;	
+	background-color: rgb(234, 244, 255);
+	
+	margin-left:80px;
+	padding:30px;
+	
+	margin-bottom: 50px;
+	margin-top: 30px;
+	
+	box-shadow:0 4px 12px rgba(0,0,0,0.06);
+}
+
+.search_bar label{
+	font-family: "Montserrat", sans-serif;
+	font-optical-sizing: auto;
+	font-size:15px;
+	font-weight: 600;
+	font-style: normal;
+	
+	padding-left:2px;
+	color:var(--blue_dark);
+}
+
+
+.search_bar input[type=text]{
+	
+	padding: 3px 6px 2px 6px;
+	height:30px;
+	width : 60%;
+	margin-top:2px;
+	
+	font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-size:15px;
+    font-weight: 500;
+    font-style: normal;
+}
+
+
+input[type=submit] {
+	
+	width : 25%;
+	height:30px;
+	background-color: var(--main_color);
+	color: var(--contrast_light);
+	border-radius: 5px;
+	cursor: pointer;
+	padding: 3px 6px 2px 6px;
+	
+	margin-left:10px;
+	
+	font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-size:15px;
+    font-weight: 500;
+    font-style: normal;
+    letter-spacing: 0.2px;
+}
+
+
+
+
+
+.job_posted{
+	box-sizing:border-box;
+	min-height:150px;
+	
+	width:70%;
+	margin-left:80px;
+	margin-bottom:4px;
+	background-color: var(--main_light);
+	padding:30px 20px 25px 20px;
+	border-radius: 10px;
+	
+	font-family: "Montserrat", sans-serif;
+				font-optical-sizing: auto;
+				font-size:18px;
+				font-weight: 650;
+				font-style: normal;
+				letter-spacing: 0.2px;
+
+}
+
+.job_posted:hover{
+	background-color: var(--contrast_light);
+	transition-duration:0.2s;
+}
+
+.job_posted a:visited{
+	color: black;
+}
+
+/* .job_posted a:active{ */
+/* 	color: var(--blue_dark); */
+/* } */
+
+.job_posted a{
+	text-decoration: none;
+}
+
+h3{
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-size:18px;
+  font-weight: 650;
+  font-style: normal;
+  padding:2px;
+  color: var(--blue_dark);
+}
+
+h5{
+	font-family: "Montserrat", sans-serif;
+	font-optical-sizing: auto;
+	font-size:12px;
+	font-weight: 500;
+	font-style: normal;
+	color: var(--blue_dark);
+	padding:3px;  
+}
+
+p{
+	font-family: "Montserrat", sans-serif;
+	font-optical-sizing: auto;
+	font-size:13px;
+	font-weight: 500;
+	font-style: normal;
+	padding:8px 2px;
+
+}
