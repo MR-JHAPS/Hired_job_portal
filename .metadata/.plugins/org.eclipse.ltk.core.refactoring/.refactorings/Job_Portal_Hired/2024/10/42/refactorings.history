@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Rename compilation unit &apos;com.jobmarket.hired.controller.Index_selected_jobs.java&apos; to &apos;Index_selected_job.java&apos;&#x0D;&#x0A;- Original project: &apos;Job_Portal_Hired&apos;&#x0D;&#x0A;- Original element: &apos;com.jobmarket.hired.controller.Index_selected_jobs.java&apos;&#x0D;&#x0A;- Renamed element: &apos;com.jobmarket.hired.controller.Index_selected_job.java&apos;" description="Rename compilation unit &apos;Index_selected_jobs.java&apos;" flags="2" id="org.eclipse.jdt.ui.rename.compilationunit" input="/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.jobmarket.hired.controller{Index_selected_jobs.java" name="Index_selected_job.java" references="false" stamp="1729159261302" version="1.0"/>
-</session>
