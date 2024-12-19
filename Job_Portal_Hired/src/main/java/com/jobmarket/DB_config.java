@@ -159,7 +159,7 @@ public interface DB_config {
 	String SP_INSERT_APPLIED_JOB = "call sp_insert_applied_job(?,?,?,?,?)";
 	
 	// EMPLOYEE_CV Stored Procedure of:
-	String SP_INSERT_EMPLOYEE_CV = "call sp_insert_employee_cv_name(?,?)";
+	String SP_INSERT_EMPLOYEE_CV = "call sp_insert_employee_cv_name(?,?,?)";
 	String SP_DISPLAY_CV_BY_EMPLOYEE_ID = "call display_cv_by_employee_id(?)";
 	String SP_DISPLAY_CV_BY_CV_ID = "call sp_display_cv_by_cv_id(?)";
 	
